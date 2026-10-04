@@ -1,4 +1,4 @@
-# Wolfpack Labs - warm redesign
+# Wolfpack Labs — warm redesign
 
 Static site for the existing wolfpack-labs.com GitHub Pages setup. No build step required.
 
@@ -24,3 +24,9 @@ No newsletter backend or newsletter form was present in the supplied site; the k
 
 ## Adding articles
 Add an HTML article under blog/, then add a story-card to blog.html and the homepage carousel. `data-search` contains the title, summary and category, and `data-category` must match its filter. The carousel reads its slides from the HTML, so controls adapt to the number of cards. Update sitemap.xml.
+
+## October 4 footer and page-width update
+Every rendered page now uses one centered site shell and the homepage footer. The maximum width is 1160px, with 32px side margins on tablet and 18px on phones. Legal pages, product pages, customer actions and ProofPack share those boundaries. Individual reading columns and printable worksheets retain their internal layouts. Two legacy URL aliases still redirect directly to the product page. The warm stylesheet uses a new version query to refresh browser caches.
+
+## Mobile menu fix
+Navigation uses an explicit button with aria-expanded and a hidden/visible panel rather than the browser-native details toggle. It closes on repeated taps, link selection, outside interaction, Escape, rotation, or returning to the page. Desktop links stay visible. The script ignores duplicate initialization, and a new script/style version forces browsers to load the update. Upload the full updated site folder so its HTML, script and stylesheet versions stay together.
