@@ -1,0 +1,14 @@
+Subject: Friendly reminder — invoice [number]
+
+Hi [customer name],
+
+I’m following up on invoice [number] for [work/project], due on [date]. The remaining balance is [amount]. I’ve included [a copy / the invoice link] so you have the details handy.
+
+If payment has already been sent, please share the date or reference so I can match it to the invoice. Otherwise, could you let me know when I can expect payment?
+
+Please let me know if there is a question about the invoice.
+
+Thank you,
+[your name]
+[business name]
+[contact information]

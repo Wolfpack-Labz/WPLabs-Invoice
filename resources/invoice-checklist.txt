@@ -1,0 +1,12 @@
+WOLFPACK LABS — BEFORE YOU SEND AN INVOICE
+
+[ ] Business name and contact details are correct.
+[ ] Customer and billing contact are correct.
+[ ] Invoice number is unique.
+[ ] Issue date and due date are included.
+[ ] Work descriptions match the agreed scope.
+[ ] Quantities, rates, and totals are checked.
+[ ] Applicable adjustments and deposits are shown separately.
+[ ] Balance due is clear.
+[ ] Payment instructions are accurate.
+[ ] A copy is saved and the date sent is recorded.
