@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="referrer" content="no-referrer" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src https://gwmckwqxnrnzqmhvodgm.supabase.co; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src https: data:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
-  <title>WP Labs: Invoice ProofPack</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="no-referrer" name="referrer"/>
+<meta content="default-src 'none'; connect-src https://gwmckwqxnrnzqmhvodgm.supabase.co; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src https: data:; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" http-equiv="Content-Security-Policy"/>
+<title>WP Labs: Invoice ProofPack</title>
+<style>
     :root { color-scheme: light; --ink:#0f172a; --muted:#64748b; --line:#dbe5ef; --soft:#eef3f8; --brand:#0f172a; }
     * { box-sizing:border-box; }
     body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; background:var(--soft); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
@@ -25,25 +26,24 @@
     .brand { padding:15px 38px; background:#f8fafc; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
     @keyframes spin { to { transform:rotate(360deg); } }
   </style>
-</head>
+<link href="styles/warm.css" rel="stylesheet"/><link href="styles/warm.css" rel="stylesheet"/></head>
 <body data-proof-pack-bootstrap="proof-pack-bootstrap-v4">
-  <main class="card" id="card" aria-live="polite">
-    <div class="inner">
-      <div class="eyebrow">WP Labs: Invoice ProofPack</div>
-      <h1 id="title">Opening your job completion package</h1>
-      <p id="message">Your professional job record is being prepared securely.</p>
-      <div class="status">
-        <div class="spinner" aria-hidden="true"></div>
-        <div>
-          <strong id="status-title">Loading package</strong>
-          <span id="status-detail">This normally takes only a moment.</span>
-        </div>
-      </div>
-    </div>
-    <div class="brand">Prepared with WP Labs: Invoice by Wolfpack Labs.</div>
-  </main>
-
-  <script>
+<main aria-live="polite" class="card" id="main-content">
+<div class="inner">
+<div class="eyebrow">WP Labs: Invoice ProofPack</div>
+<h1 id="title">Opening your job completion package</h1>
+<p id="message">Your professional job record is being prepared securely.</p>
+<div class="status">
+<div aria-hidden="true" class="spinner"></div>
+<div>
+<strong id="status-title">Loading package</strong>
+<span id="status-detail">This normally takes only a moment.</span>
+</div>
+</div>
+</div>
+<div class="brand">Prepared with WP Labs: Invoice by Wolfpack Labs.</div>
+</main>
+<script>
     (() => {
       'use strict';
 

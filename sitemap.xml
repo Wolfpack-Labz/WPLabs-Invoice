@@ -1,28 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
-    <loc>https://wolfpack-labs.com/</loc>
-    <lastmod>2026-07-24</lastmod>
-    <image:image><image:loc>https://wolfpack-labs.com/images/link-preview.png</image:loc><image:title>WP Labs: Invoice mobile invoicing app for contractors and freelancers</image:title></image:image>
-    <image:image><image:loc>https://wolfpack-labs.com/images/screenshots/wp-labs-invoice-dashboard.jpeg</image:loc><image:title>WP Labs: Invoice dashboard showing invoices estimates jobs and payments</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://wolfpack-labs.com/wp-labs-invoice.html</loc>
-    <lastmod>2026-07-24</lastmod>
-    <image:image><image:loc>https://wolfpack-labs.com/images/screenshots/wp-labs-invoice-jobs.jpeg</image:loc><image:title>Contractor job tracking in WP Labs: Invoice</image:title></image:image>
-    <image:image><image:loc>https://wolfpack-labs.com/images/screenshots/wp-labs-invoice-custom.jpeg</image:loc><image:title>Custom branding for freelance estimates and invoices</image:title></image:image>
-    <image:image><image:loc>https://wolfpack-labs.com/images/screenshots/wp-labs-invoice.jpeg</image:loc><image:title>Invoice and payment tracking in WP Labs: Invoice</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://wolfpack-labs.com/invoice-vs-estimate.html</loc>
-    <lastmod>2026-07-24</lastmod>
-    <image:image><image:loc>https://wolfpack-labs.com/images/screenshots/wp-labs-invoice-template.jpeg</image:loc><image:title>Saved invoice and estimate items and templates</image:title></image:image>
-  </url>
-  <url><loc>https://wolfpack-labs.com/contact.html</loc><lastmod>2026-07-24</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/privacy-policy.html</loc><lastmod>2026-05-31</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/terms.html</loc><lastmod>2026-05-31</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/disclosures.html</loc><lastmod>2026-05-31</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/payment-disclosure.html</loc><lastmod>2026-05-31</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/customer-privacy-notice.html</loc><lastmod>2026-06-01</lastmod></url>
-  <url><loc>https://wolfpack-labs.com/data-request-deletion.html</loc><lastmod>2026-05-26</lastmod></url>
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://wolfpack-labs.com/apps.html</loc></url><url><loc>https://wolfpack-labs.com/blog/building-first-iphone-app.html</loc></url><url><loc>https://wolfpack-labs.com/blog/contractor-hourly-rate.html</loc></url><url><loc>https://wolfpack-labs.com/blog/how-to-create-an-invoice.html</loc></url><url><loc>https://wolfpack-labs.com/blog/how-to-price-a-contractor-job.html</loc></url><url><loc>https://wolfpack-labs.com/blog/invoice-vs-estimate.html</loc></url><url><loc>https://wolfpack-labs.com/blog/markup-vs-profit-margin.html</loc></url><url><loc>https://wolfpack-labs.com/blog/submit-expo-app-to-app-store.html</loc></url><url><loc>https://wolfpack-labs.com/blog/track-unpaid-invoices.html</loc></url><url><loc>https://wolfpack-labs.com/blog.html</loc></url><url><loc>https://wolfpack-labs.com/contact.html</loc></url><url><loc>https://wolfpack-labs.com/customer-privacy-notice.html</loc></url><url><loc>https://wolfpack-labs.com/data-request-deletion.html</loc></url><url><loc>https://wolfpack-labs.com/disclosures.html</loc></url><url><loc>https://wolfpack-labs.com/</loc></url><url><loc>https://wolfpack-labs.com/invoice-app-for-contractors.html</loc></url><url><loc>https://wolfpack-labs.com/invoice-app-for-freelancers.html</loc></url><url><loc>https://wolfpack-labs.com/payment-disclosure.html</loc></url><url><loc>https://wolfpack-labs.com/privacy-policy.html</loc></url><url><loc>https://wolfpack-labs.com/resources/estimate-template.html</loc></url><url><loc>https://wolfpack-labs.com/resources/invoice-template.html</loc></url><url><loc>https://wolfpack-labs.com/resources.html</loc></url><url><loc>https://wolfpack-labs.com/terms.html</loc></url><url><loc>https://wolfpack-labs.com/tools/contractor-pricing-calculator.html</loc></url><url><loc>https://wolfpack-labs.com/tools/invoice-late-fee-calculator.html</loc></url><url><loc>https://wolfpack-labs.com/tools/profit-margin-calculator.html</loc></url><url><loc>https://wolfpack-labs.com/tools.html</loc></url><url><loc>https://wolfpack-labs.com/wp-labs-invoice.html</loc></url></urlset>
