@@ -1,4 +1,4 @@
-# Wolfpack Labs — warm redesign
+# Wolfpack Labs - warm redesign
 
 Static site for the existing wolfpack-labs.com GitHub Pages setup. No build step required.
 
