@@ -1,0 +1,58 @@
+WOLFPACK LABS | PAYMENT REMINDER PACK
+
+Replace every [placeholder]. Confirm the balance before sending.
+
+Friendly reminder
+Use shortly after the due date.
+Subject: Quick reminder: invoice [Invoice Number]
+
+Hi [Customer Name],
+
+I wanted to follow up on invoice [Invoice Number] for [Job / Service]. The outstanding balance is [Balance Due], and it was due on [Due Date].
+
+You can view the invoice here: [Invoice Link], or see the attached copy. Payment instructions: [Payment Instructions].
+
+If payment has already been sent, please let me know the date and reference so I can update my records. If you have a question about the invoice, reply and I will help.
+
+Thank you,
+[Your Name]
+[Business Name]
+[Contact Details]
+
+Second reminder
+Use after the first reminder remains unanswered.
+Subject: Following up on invoice [Invoice Number]
+
+Hi [Customer Name],
+
+I am checking in again about invoice [Invoice Number]. My records show [Balance Due] still outstanding, with an original due date of [Due Date].
+
+Please confirm whether payment has been scheduled and the expected payment date. If any part of the invoice needs clarification, let me know so we can address it.
+
+Invoice: [Invoice Link or Attached Copy]
+Payment instructions: [Payment Instructions]
+
+Thank you,
+[Your Name]
+[Business Name]
+[Contact Details]
+
+Final follow-up
+Use when you need a clear response after earlier reminders.
+Subject: Response requested: invoice [Invoice Number]
+
+Hi [Customer Name],
+
+I am following up on my earlier reminders about invoice [Invoice Number]. The outstanding balance is [Balance Due], originally due on [Due Date].
+
+Please reply by [Response Date] with a payment date, payment confirmation or details of any concern about the invoice. If you need to discuss a payment arrangement, please contact me.
+
+Invoice: [Invoice Link or Attached Copy]
+Payment instructions: [Payment Instructions]
+
+I would appreciate a response so we can resolve the outstanding balance.
+
+Thank you,
+[Your Name]
+[Business Name]
+[Contact Details]
