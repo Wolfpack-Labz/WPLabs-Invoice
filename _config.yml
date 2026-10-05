@@ -1,9 +1,12 @@
 title: Wolfpack Labs
-url: "https://wolfpack-labs.com"
-baseurl: ""
+url: https://wolfpack-labs.com
+baseurl: ''
 timezone: America/New_York
 exclude:
-  - README.md
-  - VALIDATION.md
-  - Gemfile
-  - Gemfile.lock
+- README.md
+- VALIDATION.md
+- Gemfile
+- Gemfile.lock
+- CALCULATOR-NOTES.md
+- UPLOAD-INSTRUCTIONS.md
+- BLOG-UPDATE.md

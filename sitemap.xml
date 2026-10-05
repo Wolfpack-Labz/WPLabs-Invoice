@@ -22,6 +22,9 @@
   <url><loc>https://wolfpack-labs.com/tools/profit-margin-calculator.html</loc></url>
   <url><loc>https://wolfpack-labs.com/tools.html</loc></url>
   <url><loc>https://wolfpack-labs.com/wp-labs-invoice.html</loc></url>
+  <url><loc>https://wolfpack-labs.com/tools/hourly-rate-calculator.html</loc></url>
+  <url><loc>https://wolfpack-labs.com/tools/markup-vs-margin-calculator.html</loc></url>
+  <url><loc>https://wolfpack-labs.com/tools/invoice-due-date-calculator.html</loc></url>
   {% assign blog_posts = site.pages | where: "blog_post", true | sort: "date" | reverse %}
   {% for post in blog_posts %}
   <url><loc>{{ site.url }}{{ post.url }}</loc><lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod></url>
