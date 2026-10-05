@@ -25,7 +25,7 @@
 .public-page h1 {
   margin: 0;
   color: #0f172a;
-  font-size: clamp(30px, 5vw, 48px);
+  font-size: clamp(28px, calc(5vw - 2px), 46px);
   line-height: 1;
   letter-spacing: -1.4px;
 }

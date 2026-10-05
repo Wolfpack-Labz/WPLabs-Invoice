@@ -61,7 +61,7 @@
   max-width: 860px;
   margin: 0;
   color: var(--seo-ink);
-  font-size: clamp(38px, 6vw, 66px);
+  font-size: clamp(36px, calc(6vw - 2px), 64px);
   line-height: .98;
   letter-spacing: -2.4px;
 }
