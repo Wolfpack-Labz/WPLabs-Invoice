@@ -74,38 +74,105 @@
     const filters = [...browser.querySelectorAll('[data-filter]')];
     const count = browser.querySelector('.search-count');
     const empty = browser.querySelector('.empty-state');
-    let category = 'All articles';
+    const pagination = browser.querySelector('.blog-pagination');
+    const numbers = pagination?.querySelector('.page-numbers');
+    const previous = pagination?.querySelector('[data-page-step="-1"]');
+    const next = pagination?.querySelector('[data-page-step="1"]');
+    const summary = pagination?.querySelector('.page-summary');
+    const pageSize = 12;
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    let category = 'All articles', page = 1, pageCount = 1;
     const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-    function filter(updateUrl = true) {
-      const terms = normalize(input.value).split(/\s+/).filter(Boolean);
-      let total = 0;
-      cards.forEach(card => {
-        const matches = terms.every(term => normalize(card.dataset.search).includes(term)) && (category === 'All articles' || category === card.dataset.category);
-        card.hidden = !matches;
-        if (matches) total++;
-      });
-      filters.forEach(button => button.setAttribute('aria-pressed', String(category === button.dataset.filter)));
-      count.textContent = `${total} ${total === 1 ? 'article' : 'articles'}${input.value.trim() ? ' found' : ' to explore'}`;
-      empty.hidden = total !== 0;
-      if (updateUrl) {
-        const url = new URL(location.href);
-        input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
-        category === 'All articles' ? url.searchParams.delete('category') : url.searchParams.set('category', category);
-        history.replaceState(null, '', url);
-      }
+
+    function updateUrl(push = false) {
+      const url = new URL(location.href);
+      input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
+      category === 'All articles' ? url.searchParams.delete('category') : url.searchParams.set('category', category);
+      page > 1 ? url.searchParams.set('page', String(page)) : url.searchParams.delete('page');
+      if (url.href !== location.href) history[push ? 'pushState' : 'replaceState'](null, '', url);
     }
-    function restoreUrl() {
+
+    function render() {
+      const terms = normalize(input.value).split(/\s+/).filter(Boolean);
+      const matches = cards.filter(card => terms.every(term => normalize(card.dataset.search).includes(term)) && (category === 'All articles' || category === card.dataset.category));
+      // Older cached blog markup remains usable during a rollout.
+      pageCount = pagination ? Math.max(1, Math.ceil(matches.length / pageSize)) : 1;
+      page = Math.min(Math.max(1, page), pageCount);
+      const start = pagination ? (page - 1) * pageSize : 0;
+      const visible = new Set(matches.slice(start, pagination ? start + pageSize : matches.length));
+      cards.forEach(card => { card.hidden = !visible.has(card); });
+      filters.forEach(button => button.setAttribute('aria-pressed', String(category === button.dataset.filter)));
+      const noun = matches.length === 1 ? 'article' : 'articles';
+      count.textContent = matches.length ? `Showing ${start + 1}–${start + visible.size} of ${matches.length} ${noun}${input.value.trim() ? ' found' : ''}` : 'No articles found';
+      empty.hidden = matches.length !== 0;
+      if (!pagination) return;
+      pagination.hidden = pageCount <= 1;
+      previous.disabled = page === 1;
+      next.disabled = page === pageCount;
+      summary.textContent = `Page ${page} of ${pageCount}`;
+      numbers.replaceChildren();
+      // Keep the widget compact as the archive grows, with first/last pages always available.
+      const pages = [...new Set([1, pageCount, ...Array.from({length: 5}, (_, i) => page + i - 2)])].filter(value => value >= 1 && value <= pageCount).sort((a, b) => a - b);
+      pages.forEach((value, index) => {
+        if (index && value - pages[index - 1] > 1) {
+          const gap = document.createElement('span');
+          gap.className = 'page-gap';
+          gap.textContent = '…';
+          gap.setAttribute('aria-hidden', 'true');
+          numbers.append(gap);
+        }
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'page-button';
+        button.dataset.page = value;
+        button.textContent = value;
+        button.setAttribute('aria-label', `Page ${value}`);
+        button.setAttribute('aria-controls', 'blog-article-list');
+        if (value === page) button.setAttribute('aria-current', 'page');
+        numbers.append(button);
+      });
+    }
+
+    function jumpToArticles() {
+      count.focus({preventScroll: true});
+      count.scrollIntoView({block: 'start', behavior: motion.matches ? 'instant' : 'smooth'});
+    }
+
+    function filter() {
+      page = 1;
+      render();
+      updateUrl();
+    }
+
+    function restoreUrl(scroll = false) {
       const params = new URLSearchParams(location.search);
       input.value = params.get('q') || '';
       category = filters.some(f => f.dataset.filter === params.get('category')) ? params.get('category') : 'All articles';
-      filter(false);
+      const requested = Number(params.get('page'));
+      page = Number.isSafeInteger(requested) && requested > 0 ? requested : 1;
+      render();
+      updateUrl();
+      if (scroll) jumpToArticles();
     }
-    input.addEventListener('input', () => filter());
+
+    pagination?.addEventListener('click', event => {
+      const button = event.target.closest('button');
+      if (!button || button.disabled || !pagination.contains(button)) return;
+      const requested = button.dataset.page ? Number(button.dataset.page) : page + Number(button.dataset.pageStep);
+      if (!Number.isInteger(requested) || requested === page || requested < 1 || requested > pageCount) return;
+      page = requested;
+      render();
+      updateUrl(true);
+      jumpToArticles();
+    });
+    input.addEventListener('input', filter);
     browser.querySelector('form').addEventListener('submit', event => { event.preventDefault(); filter(); });
     filters.forEach(button => button.addEventListener('click', () => { category = button.dataset.filter; filter(); }));
     browser.querySelector('.clear-search').addEventListener('click', () => { input.value = ''; filter(); input.focus(); });
     browser.querySelector('[data-search-reset]').addEventListener('click', () => { input.value = ''; category = 'All articles'; filter(); input.focus(); });
-    addEventListener('popstate', restoreUrl);
+    addEventListener('popstate', () => restoreUrl(true));
+    // Native history restoration can otherwise undo the widget's scroll-to-results behavior.
+    if (pagination && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
     restoreUrl();
   }
 
