@@ -1,0 +1,397 @@
+/* Shared typography, navigation and spacing. Load last on every page.
+   Headings use Georgia; interface and reading text use Arial throughout.
+   The title cap is 70% of the former homepage title: 74.8px -> 52.36px.
+   A 30px floor keeps narrow-screen titles readable without a breakpoint jump. */
+:root {
+  --font-reading: Arial, Helvetica, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --type-title: clamp(1.875rem, calc(3.99vw - .0875rem), 3.2725rem);
+  --type-section: clamp(1.625rem, 2.3vw, 2rem);
+  --type-card: 1.375rem;
+  --type-body: 1rem;
+  --type-lead: 1.0625rem;
+  --type-navigation: .9375rem;
+  --type-small: .875rem;
+  --page-max-width: 1160px;
+  --page-gutter: 32px;
+  --nav-tint: #f0e7da;
+}
+
+html[data-site-theme='invoice'] {
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --card-muted: #eaf1f8;
+  --surface: #ffffff;
+  --white: #ffffff;
+  --text: #0f172a;
+  --text-soft: #475569;
+  --accent: #0369a1;
+  --accent-dark: #075985;
+  --border: #d6e1ed;
+  --teal: #0369a1;
+  --nav-tint: #e4eef8;
+  --shadow: 0 8px 24px #0f172a0a;
+  --seo-ink: var(--text);
+  --seo-muted: var(--text-soft);
+  --seo-line: var(--border);
+  --seo-blue: var(--accent);
+  --seo-blue-dark: var(--accent-dark);
+  --seo-soft: var(--card-muted);
+}
+
+html[data-site-theme='womens-health'] {
+  --bg: var(--wh-bg);
+  --card: var(--wh-paper);
+  --card-muted: var(--wh-tint);
+  --surface: var(--wh-paper);
+  --text: var(--wh-text);
+  --text-soft: var(--wh-soft);
+  --accent: var(--wh-mauve);
+  --accent-dark: var(--wh-deep);
+  --border: var(--wh-line);
+  --teal: var(--wh-deep);
+  --nav-tint: var(--wh-tint);
+}
+
+/* Every route shares the same page boundary and header geometry. */
+html[data-site-theme] .site-shell {
+  width: min(var(--page-max-width), calc(100% - 2 * var(--page-gutter))) !important;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+html[data-site-theme] body .site-shell > .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 24px;
+  padding: 20px 0;
+  margin: 0 0 28px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+html[data-site-theme] body.friendly .site-shell > .topbar,
+html[data-site-theme] body.wh .site-shell > .topbar { margin-bottom: 0; }
+html[data-site-theme] body .topbar :is(.friendly-brand, .publisher-brand) {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font: 400 1.5rem/1.2 var(--font-heading);
+  letter-spacing: -.045em;
+  text-decoration: none;
+  color: var(--text);
+}
+html[data-site-theme] .topbar .site-wolf-mark {
+  width: 44px !important;
+  height: 44px !important;
+  flex: 0 0 44px !important;
+  object-fit: contain;
+}
+html[data-site-theme] .site-brand-name strong { font-weight: 400; }
+html[data-site-theme] .topbar .nav-accordion { margin-left: auto; }
+html[data-site-theme] .topbar .nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 0;
+}
+html[data-site-theme] body .topbar .nav a,
+html[data-site-theme] body .topbar .nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  font: 500 var(--type-navigation)/1.4 var(--font-reading) !important;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  color: var(--text) !important;
+  background: transparent !important;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  white-space: nowrap;
+}
+html[data-site-theme] body .topbar .nav a:hover,
+html[data-site-theme] body .topbar .nav a[aria-current] {
+  color: var(--accent-dark) !important;
+  background: var(--nav-tint) !important;
+  transform: none;
+}
+html[data-site-theme] body .topbar .nav-toggle {
+  gap: 10px;
+  min-width: 74px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+html[data-site-theme] .topbar .nav-toggle [data-menu-icon] {
+  width: 20px;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-align: center;
+}
+html[data-site-theme] body :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--teal) !important;
+  outline-offset: 4px !important;
+}
+html[data-site-theme] [hidden] { display: none !important; }
+
+/* Shared app overview strip, including the original Women's Health copy. */
+html[data-site-theme] .app-feature-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0 0 24px;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+html[data-site-theme] .app-feature-strip > div { min-width: 0; }
+html[data-site-theme] body .app-feature-strip h2 {
+  font-size: var(--type-card) !important;
+  margin: 0 0 12px;
+}
+html[data-site-theme] .app-feature-strip p { margin: 0; color: var(--text-soft); }
+
+/* Remove warm-theme color literals from Invoice surfaces, while keeping the
+   publisher's logo and the app's navy/blue identity intact. */
+html[data-site-theme='invoice'] body :is(.card, .public-card, .theme-card, .seo-hero, .seo-section, .seo-cta) {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+html[data-site-theme='invoice'] body :is(.seo-visual, .seo-card, .seo-step, .seo-faq, .policy-card .notice) {
+  background: var(--card-muted);
+  border-color: var(--border);
+}
+html[data-site-theme='invoice'] body :is(.seo-kicker, .eyebrow, .brand-chip, .seo-proof-strip span, .audience-jump-nav a) {
+  background: var(--card-muted) !important;
+  border-color: var(--border) !important;
+  color: var(--accent-dark) !important;
+}
+html[data-site-theme='invoice'] body :is(.seo-icon, .seo-button-secondary:hover, .button.secondary:hover) {
+  background: var(--card-muted) !important;
+  color: var(--accent-dark) !important;
+}
+html[data-site-theme='invoice'] body :is(.policy-card, .invoice-brand-line) { color: var(--text); }
+html[data-site-theme='invoice'] body .policy-card :is(h1, h2, h3, h4, strong) { color: var(--text); }
+html[data-site-theme='invoice'] body .policy-card :is(p, li, th, td, .muted) { color: var(--text-soft); }
+html[data-site-theme='invoice'] body :is(.policy-card a, .seo-breadcrumbs a) { color: var(--accent-dark) !important; }
+html[data-site-theme='invoice'] body .policy-card :is(th, td) { border-color: var(--border); }
+html[data-site-theme='invoice'] body .policy-card th { background: var(--card-muted); }
+html[data-site-theme='invoice'] body .back-to-top { background: var(--accent); border-color: var(--accent); }
+html[data-site-theme='invoice'] body .back-to-top:hover { background: var(--accent-dark); }
+
+@media screen {
+  html[data-site-theme], html[data-site-theme] body {
+    background: var(--bg) !important;
+    color: var(--text);
+    font: 400 var(--type-body)/1.75 var(--font-reading);
+    -webkit-text-size-adjust: 100%;
+  }
+  html[data-site-theme] body :is(h1, h2, h3, h4) {
+    font-family: var(--font-heading) !important;
+    font-weight: 400 !important;
+    color: var(--text);
+    overflow-wrap: anywhere;
+  }
+  html[data-site-theme] body h1 {
+    font-size: var(--type-title) !important;
+    line-height: 1.16 !important;
+    letter-spacing: -.035em !important;
+  }
+  html[data-site-theme] body h2 {
+    font-size: var(--type-section) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -.03em !important;
+  }
+  html[data-site-theme] body h3 {
+    font-size: var(--type-card) !important;
+    line-height: 1.3 !important;
+    letter-spacing: -.02em !important;
+  }
+  html[data-site-theme] body h4 {
+    font-size: var(--type-body) !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+  }
+  html[data-site-theme] body :is(main, .site-content) :is(p, li) {
+    font-size: var(--type-body);
+    line-height: 1.75;
+  }
+  html[data-site-theme] body :is(.article-body, .policy-card, .policy-content, .legal-document, .hub-card, .legal-card, .feature-strip, .app-feature-strip) :is(p, li) {
+    font-size: var(--type-body) !important;
+    line-height: 1.75 !important;
+  }
+  html[data-site-theme] body :is(.hero-copy > p, .page-intro > p, .article-header > p, .legal-intro > p, .lead, .seo-lead, .intro) {
+    font-size: var(--type-lead) !important;
+    line-height: 1.75 !important;
+  }
+  html[data-site-theme] body .site-shell :is(.small, .updated, .hero-note, .legal-date, .meta, .help-text, .field-hint, .legal-form-notice, .copyright) {
+    font-size: var(--type-small) !important;
+    line-height: 1.6 !important;
+  }
+  html[data-site-theme] body .eyebrow {
+    font: 600 var(--type-small)/1.5 var(--font-reading);
+    letter-spacing: .07em;
+    text-transform: none;
+  }
+  html[data-site-theme] body :is(.button, .seo-button-secondary, button[type='submit'], .accept) {
+    min-height: 48px;
+    padding: 12px 20px;
+    font: 600 var(--type-navigation)/1.5 var(--font-reading);
+    letter-spacing: 0;
+    border-radius: 12px;
+    text-align: center;
+  }
+  html[data-site-theme] body :is(input, select, textarea) {
+    font: 400 var(--type-body)/1.5 var(--font-reading) !important;
+  }
+  html[data-site-theme] body label {
+    font: 600 var(--type-small)/1.5 var(--font-reading);
+  }
+  html[data-site-theme] body table { font: 400 var(--type-navigation)/1.7 var(--font-reading); }
+  html[data-site-theme] body :is(.home-hero, .hero, .page-intro, .legal-intro, .article-header, .page-heading) {
+    padding-top: clamp(36px, 4vw, 52px);
+    padding-bottom: 36px;
+  }
+  html[data-site-theme] body :is(.home-hero, .hero) { gap: 40px; }
+  html[data-site-theme] body :is(.hero-copy, .page-intro, .legal-intro, .article-header, .page-heading) h1,
+  html[data-site-theme] body .hero h1 { margin: 12px 0 20px; }
+  html[data-site-theme] body .start-card { min-height: 0; padding: 36px 30px 28px; }
+  html[data-site-theme] body .brand-panel p {
+    font: 400 var(--type-section)/1.25 var(--font-heading);
+  }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    gap: 24px 32px;
+    align-items: start;
+    margin: 0;
+    padding: 32px 0 26px;
+    border-top: 1px solid var(--border);
+    color: var(--text-soft);
+  }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    justify-content: flex-end;
+    align-content: start;
+  }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) :is(p, nav a, .publisher-credit) {
+    font: 400 var(--type-small)/1.6 var(--font-reading);
+    color: var(--text-soft);
+  }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) nav a {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+  html[data-site-theme] body .site-shell :is(.friendly-footer .friendly-brand, .product-footer) {
+    font: 400 1.25rem/1.3 var(--font-heading);
+    color: var(--text);
+    letter-spacing: -.035em;
+  }
+}
+
+@media (max-width: 860px) {
+  html[data-site-theme] body .site-shell > .topbar { gap: 12px; flex-wrap: wrap; }
+  html[data-site-theme] .topbar .nav-accordion {
+    position: relative;
+    width: auto !important;
+    flex: 0 0 auto;
+  }
+  html[data-site-theme] body .topbar .nav-toggle:not([hidden]) { display: inline-flex; }
+  html[data-site-theme] body .topbar .nav-accordion[data-menu-ready] > .nav:not([hidden]) {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1000;
+    width: 230px;
+    max-width: calc(100vw - 36px);
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 10px;
+    background: var(--card) !important;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px #0f172a15;
+  }
+  html[data-site-theme] body .topbar .nav-accordion[data-menu-ready] > .nav a {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  html[data-site-theme] .topbar .nav-accordion:not([data-menu-ready]) { flex: 1 1 100%; }
+  html[data-site-theme] body .topbar .nav-accordion:not([data-menu-ready]) > .nav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: none;
+    gap: 4px;
+    padding: 0;
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
+  }
+  html[data-site-theme] body .topbar .nav-accordion:not([data-menu-ready]) > .nav a { padding: 8px 12px; }
+}
+
+@media (min-width: 861px) {
+  html[data-site-theme] body .topbar .nav-toggle { display: none !important; }
+  html[data-site-theme] body .topbar .nav-accordion > .nav {
+    position: static;
+    display: flex;
+    width: auto;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-site-theme] .app-feature-strip { grid-template-columns: 1fr; gap: 24px; }
+  html[data-site-theme] .app-feature-strip > div + div {
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 640px) {
+  :root { --page-gutter: 18px; }
+  html[data-site-theme] body .site-shell > .topbar { padding: 16px 0; }
+  html[data-site-theme] body .topbar :is(.friendly-brand, .publisher-brand) {
+    gap: 8px;
+    font-size: 1.25rem;
+  }
+  html[data-site-theme] .topbar .site-wolf-mark {
+    width: 36px !important;
+    height: 36px !important;
+    flex-basis: 36px !important;
+  }
+  html[data-site-theme] body :is(.home-hero, .hero, .page-intro, .legal-intro, .article-header, .page-heading) {
+    padding-top: 32px;
+    padding-bottom: 28px;
+  }
+  html[data-site-theme] body :is(.home-hero, .hero) { gap: 28px; }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) { grid-template-columns: 1fr; gap: 20px; }
+  html[data-site-theme] body .site-shell > :is(.friendly-footer, .wh-footer) nav { justify-content: flex-start; }
+}
+
+@media print {
+  html[data-site-theme] .site-shell { width: 100% !important; max-width: none; }
+  html[data-site-theme] :is(.topbar, .friendly-footer, .wh-footer) { display: none !important; }
+  html[data-site-theme] body h1 { font: 400 28pt/1.2 var(--font-heading); }
+}
