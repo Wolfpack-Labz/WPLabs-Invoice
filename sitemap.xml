@@ -5,18 +5,12 @@
   <url><loc>https://wolfpack-labs.com/apps.html</loc></url>
   <url><loc>https://wolfpack-labs.com/blog.html</loc></url>
   <url><loc>https://wolfpack-labs.com/contact.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/customer-privacy-notice.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/data-request-deletion.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/disclosures.html</loc></url>
   <url><loc>https://wolfpack-labs.com/</loc></url>
   <url><loc>https://wolfpack-labs.com/invoice-app-for-contractors.html</loc></url>
   <url><loc>https://wolfpack-labs.com/invoice-app-for-freelancers.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/payment-disclosure.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/privacy-policy.html</loc></url>
   <url><loc>https://wolfpack-labs.com/resources/estimate-template.html</loc></url>
   <url><loc>https://wolfpack-labs.com/resources/invoice-template.html</loc></url>
   <url><loc>https://wolfpack-labs.com/resources.html</loc></url>
-  <url><loc>https://wolfpack-labs.com/terms.html</loc></url>
   <url><loc>https://wolfpack-labs.com/tools/contractor-pricing-calculator.html</loc></url>
   <url><loc>https://wolfpack-labs.com/tools/invoice-late-fee-calculator.html</loc></url>
   <url><loc>https://wolfpack-labs.com/tools/profit-margin-calculator.html</loc></url>
@@ -38,4 +32,18 @@
   <url><loc>https://wolfpack-labs.com/womens-health/account-help.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://wolfpack-labs.com/womens-health/accessibility.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://wolfpack-labs.com/womens-health/support.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/index.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/privacy-policy.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/terms.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/disclosures.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/cookies.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/data-requests.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/legal/accessibility.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/index.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/privacy-policy.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/terms.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/disclosures.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/data-request-deletion.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/customer-privacy-notice.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/invoice-app/payment-disclosure.html</loc><lastmod>2026-10-20</lastmod></url>
 </urlset>
