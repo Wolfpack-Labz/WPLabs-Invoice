@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Requests &amp; Account Deletion | WP Labs: Invoice</title>
+<meta content="Learn how to request access, correction, export, or deletion of personal information and WP Labs: Invoice account data from Wolfpack Labs." name="description"/>
+<meta content="Wolfpack Labs LLC" name="author"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="#fbf7ef" name="theme-color"/>
+<link href="https://wolfpack-labs.com/invoice-app/data-request-deletion.html" rel="canonical"/>
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta content="website" property="og:type"/>
+<meta property="og:title" content="Data Requests &amp;amp; Account Deletion | WP Labs: Invoice">
+<meta content="Learn how to request access, correction, export, or deletion of personal information and WP Labs: Invoice account data from Wolfpack Labs." property="og:description"/>
+<meta content="https://wolfpack-labs.com/invoice-app/data-request-deletion.html" property="og:url"/>
+<meta property="og:image" content="https://wolfpack-labs.com/images/wp-labs-invoice.png?v=20261020-brand3">
+<meta content="Wolfpack Labs" property="og:site_name"/>
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Requests &amp;amp; Account Deletion | WP Labs: Invoice">
+<meta content="Learn how to request access, correction, export, or deletion of personal information and WP Labs: Invoice account data from Wolfpack Labs." name="twitter:description"/>
+<meta name="twitter:image" content="https://wolfpack-labs.com/images/wp-labs-invoice.png?v=20261020-brand3">
+<!-- Favicons -->
+<link href="../styles/shared.css" rel="stylesheet"/>
+<style>
+
+    .policy-card {
+      background: #fff;
+      border: 1px solid #dbe3ef;
+      border-radius: 18px;
+      padding: clamp(22px, 4vw, 44px);
+      box-shadow: 0 16px 45px rgba(23, 32, 51, 0.08);
+      overflow-wrap: anywhere;
+    }
+    .policy-card h1, .policy-card h2, .policy-card h3 { line-height: 1.25; color: #000; }
+    .policy-card h1 { font-size: 30px; margin: 0 0 8px; }
+    .policy-card h2 { font-size: 22px; margin-top: 34px; }
+    .policy-card h3 { font-size: 18px; margin-top: 24px; }
+    .policy-card p, .policy-card li { color: #595959; font-size: 15px; }
+    .policy-card a { color: #3030f1; }
+    .policy-card ul { list-style-type: square; }
+    ol { padding-left: 22px; }
+    .policy-card table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; }
+    .policy-card th, .policy-card td { border: 1px solid #000; padding: 10px; vertical-align: top; }
+    .policy-card th { text-align: left; color: #595959; }
+    .policy-card .muted { color: #7f7f7f; font-weight: 700; }
+    .policy-card .notice { background: #f1f5ff; border: 1px solid #c7d7fe; padding: 14px 16px; border-radius: 12px; margin: 18px 0 28px; color: #334155; }
+    .warning { background: #fff7ed; border: 1px solid #fed7aa; padding: 14px 16px; border-radius: 12px; margin: 18px 0; color: #7c2d12; }
+    .request-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+    .button-link {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 10px 0 4px;
+    }
+
+    .policy-card a.button-link,
+    .policy-card a.button-link:visited,
+    .policy-card a.button-link:hover,
+    .policy-card a.button-link:focus-visible {
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .policy-card .small { font-size: 13px; color: #7f7f7f; }
+
+
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, background 0.2s ease;
+    }
+
+    .back-to-top:hover {
+      background: #1d4ed8;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.28);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 620px) {
+      .back-to-top {
+        right: 14px;
+        bottom: 14px;
+        min-height: 42px;
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+    }
+
+    /* Uniform header legal page overrides */
+    .legal-page {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+
+    .legal-page .topbar {
+      margin-bottom: 22px;
+    }
+
+    .policy-card {
+      color: #222;
+    }
+
+    .policy-card a {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    .policy-card a:hover,
+    .policy-card a:focus-visible {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 620px) {
+      .legal-page {
+        width: min(100% - 22px, 980px);
+        padding-top: 18px;
+      }
+    }
+</style>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="googlebot"/><meta property="og:image:alt" content="WP Labs: Invoice app icon"><meta name="twitter:image:alt" content="WP Labs: Invoice app icon"><link href="../styles/logo.css?v=20260802-white-120" rel="stylesheet"/><link href="../styles/warm.css?v=20261004-mobile-menu" rel="stylesheet"/><link rel="icon" href="../favicon.ico?v=20261020-brand3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="../images/icons/favicon-32.png?v=20261020-brand3"><link rel="icon" type="image/png" sizes="192x192" href="../images/icons/favicon-192.png?v=20261020-brand3"><link rel="apple-touch-icon" sizes="180x180" href="../images/icons/apple-touch-icon.png?v=20261020-brand3"><link rel="manifest" href="../site.webmanifest?v=20261020-brand3"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="1024"><link rel="stylesheet" href="../styles/site-branding.css?v=20261020-brand3"><link rel="stylesheet" href="../styles/pages/site-legal.css?v=20261020-legal4"></head>
+<body class="has-site-shell"><div class="shell site-shell"><a class="skip-link" href="#main-content">Skip to content</a><header class="topbar"><a aria-label="Wolfpack Labs home" class="friendly-brand" href="../index.html"><img class="site-wolf-mark" src="../images/wolfpack-labs-mark-192.png?v=20261020-brand3" width="48" height="48" alt="" decoding="async"><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a><div class="nav-accordion"><button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open primary navigation" class="nav-toggle" hidden="" type="button"><span>Menu</span><span aria-hidden="true" data-menu-icon="">☰</span></button><nav aria-label="Primary navigation" class="nav" id="primary-navigation"><a href="../apps.html">Apps</a><a href="../tools.html">Tools</a><a href="../resources.html">Resources</a><a href="../blog.html">Blog</a></nav></div></header><main class="policy-card site-content" id="main-content"><div class="invoice-brand-line invoice-brand-line-small"><img class="invoice-site-icon" src="../images/wp-labs-invoice.png?v=20261020-brand3" width="44" height="44" alt="WP Labs: Invoice app icon" decoding="async"><span>WP Labs: Invoice</span></div>
+<h1>Data Request &amp; Account Deletion</h1><div class="legal-scope invoice-legal-scope"><strong>WP Labs: Invoice</strong> · This document applies to the Invoice app and its related service. <a href="../legal/privacy-policy.html">Website privacy</a> · <a href="index.html">All Invoice policies</a></div>
+<p class="muted">Last updated May 25, 2026</p>
+<p>This page explains how users of <strong>WP Labs: Invoice</strong>, a mobile invoicing and estimate application by <strong>Wolfpack Labs</strong>, can request access to their data, correction of their data, export of their data, deletion of certain data, or deletion of their account.</p>
+<p>WP Labs: Invoice is designed to help small businesses, freelancers, contractors, and self-employed professionals create, send, track, and manage invoices, estimates, customers, and related business records.</p>
+<div class="notice">
+<strong>Submit a request:</strong> Email us at <a href="mailto:support@wolfpack-labs.com?subject=WP%20Labs%3A%20Invoice%20Data%20Request">support@wolfpack-labs.com</a> with the subject line <strong>WP Labs: Invoice Data Request</strong>.
+        <br/>
+<a class="button-link" href="https://wolfpack-labs.com/contact.html">Email Data Request</a>
+</div>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#requests">Types of Requests</a></li>
+<li><a href="#how-to-submit">How to Submit a Request</a></li>
+<li><a href="#verification">Identity Verification</a></li>
+<li><a href="#account-deletion">Account Deletion</a></li>
+<li><a href="#data-deletion">Data Deletion</a></li>
+<li><a href="#data-retention">Information We May Retain</a></li>
+<li><a href="#processing-time">Processing Time</a></li>
+<li><a href="#third-party-services">Third-Party Services</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ol>
+<h2 id="requests">1. Types of Requests</h2>
+<p>You may contact us to request that we take action regarding personal information associated with your WP Labs: Invoice account. Depending on your location and applicable law, available requests may include:</p>
+<ul>
+<li><strong>Access:</strong> Request information about the personal information associated with your account.</li>
+<li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete account information.</li>
+<li><strong>Export:</strong> Request a copy of certain data associated with your account, where technically feasible.</li>
+<li><strong>Deletion of specific data:</strong> Ask us to delete certain information, files, invoices, estimates, customers, or other records, where available and legally permitted.</li>
+<li><strong>Account deletion:</strong> Ask us to delete your WP Labs: Invoice account and associated account data.</li>
+<li><strong>Questions or objections:</strong> Contact us about privacy questions or concerns related to your information.</li>
+</ul>
+<h2 id="how-to-submit">2. How to Submit a Request</h2>
+<p>To submit a data request, email <a href="mailto:support@wolfpack-labs.com">support@wolfpack-labs.com</a> and include the following information:</p>
+<div class="request-box">
+<h3>Recommended Email Format</h3>
+<p><strong>Subject:</strong> WP Labs: Invoice Data Request</p>
+<p><strong>Include:</strong></p>
+<ul>
+<li>Your full name</li>
+<li>The email address used for your WP Labs: Invoice account</li>
+<li>The type of request, such as access, correction, export, data deletion, or account deletion</li>
+<li>A brief description of what you want us to do</li>
+<li>Any relevant details that help us locate the correct account or records</li>
+</ul>
+</div>
+<p>Please do not send sensitive personal information such as Social Security numbers, government identification numbers, financial account numbers, or passwords in your request.</p>
+<h2 id="verification">3. Identity Verification</h2>
+<p>For security, we may need to verify your identity before completing a request. We may ask you to confirm information associated with your WP Labs: Invoice account, respond from the email address connected to your account, or complete another reasonable verification step.</p>
+<p>If we cannot verify that you are authorized to make a request for an account, we may be unable to complete the request.</p>
+<h2 id="account-deletion">4. Account Deletion</h2>
+<p>You may request deletion of your WP Labs: Invoice account by emailing <a href="mailto:support@wolfpack-labs.com">support@wolfpack-labs.com</a> with the subject line <strong>WP Labs: Invoice Account Deletion Request</strong>.</p>
+<p>When an account deletion request is completed, we will take steps to delete or de-identify account information and app records associated with the account, subject to technical limitations and information we are required or permitted to retain.</p>
+<div class="warning">
+<strong>Important:</strong> Account deletion may permanently remove access to invoices, estimates, customers, uploaded files, business records, settings, and related account information. Before requesting deletion, you should save or export any records you need for tax, accounting, legal, customer service, or business purposes.
+      </div>
+<h2 id="data-deletion">5. Data Deletion</h2>
+<p>You may request deletion of specific data associated with your account, such as customer records, uploaded files, invoices, estimates, or other information stored in WP Labs: Invoice.</p>
+<p>Some information may be editable or deletable directly inside the app. If you cannot delete something in the app, contact us and describe the records you want removed.</p>
+<p>Deleting certain records may affect app functionality, reporting totals, document history, customer records, and future access to those records.</p>
+<h2 id="data-retention">6. Information We May Retain</h2>
+<p>Even after a deletion request, we may retain limited information when necessary or permitted for legitimate purposes, including:</p>
+<ul>
+<li>Security, fraud prevention, and abuse prevention</li>
+<li>Compliance with legal obligations or lawful requests</li>
+<li>Resolving disputes or enforcing agreements</li>
+<li>Maintaining records of completed support, privacy, or deletion requests</li>
+<li>Backup systems, logs, and technical records that are deleted according to normal retention schedules</li>
+<li>Information that has been de-identified, aggregated, or anonymized</li>
+</ul>
+<p>We do not guarantee that deleted information can be recovered after deletion is completed.</p>
+<h2 id="processing-time">7. Processing Time</h2>
+<p>We aim to respond to data and deletion requests within a reasonable period after receiving and verifying the request. The time needed may depend on the type of request, the amount of information involved, verification requirements, and applicable law.</p>
+<p>If additional time is needed, we may contact you using the email address associated with your request.</p>
+<h2 id="third-party-services">8. Third-Party Services</h2>
+<p>WP Labs: Invoice may rely on third-party service providers to operate account authentication, hosting, databases, file storage, email, support, analytics, diagnostics, or payment-related features. Deletion requests may require us to delete or request deletion of information stored with those providers.</p>
+<p>If you use third-party services through or alongside WP Labs: Invoice, such as Google sign-in or future payment providers, you may also need to manage information directly with those third-party services.</p>
+<h2 id="contact">9. Contact Us</h2>
+<p>For data requests, account deletion requests, privacy questions, or support, contact us at:</p>
+<p><strong>Wolfpack Labs</strong><br/>Email: <a href="mailto:support@wolfpack-labs.com">support@wolfpack-labs.com</a><br/>United States</p>
+<p class="small">This page is provided for informational purposes and does not replace the WP Labs: Invoice Privacy Policy or Terms of Use. If there is a conflict between this page and a more specific legal document, the more specific document may control where permitted by law.</p>
+</main><footer class="friendly-footer"><div><a class="friendly-brand" href="../index.html" aria-label="Wolfpack Labs home"><img class="site-wolf-mark" src="../images/wolfpack-labs-mark-192.png?v=20261020-brand3" width="48" height="48" alt="" decoding="async"><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a><p>Useful information. A little more confidence.</p></div><nav aria-label="Invoice footer navigation"><a href="../invoice-app/index.html">Invoice policies</a><a href="../invoice-app/privacy-policy.html">Invoice privacy</a><a href="../invoice-app/terms.html">Invoice terms</a><a href="../invoice-app/disclosures.html">App disclosures</a><a href="../invoice-app/data-request-deletion.html">Data &amp; deletion</a><a href="../invoice-app/customer-privacy-notice.html">Customer privacy</a><a href="../invoice-app/payment-disclosure.html">Payments</a><a href="../legal/index.html">All policies</a><a href="../legal/privacy-policy.html">Website privacy</a></nav><p class="copyright">© 2026 Wolfpack Labs LLC</p></footer></div>
+<button aria-label="Back to top" class="back-to-top" id="back-to-top" type="button">
+    ↑ Back to top
+  </button>
+<script>
+    const backToTopButton = document.getElementById('back-to-top');
+
+    function toggleBackToTopButton() {
+      if (window.scrollY > 500) {
+        backToTopButton.classList.add('is-visible');
+      } else {
+        backToTopButton.classList.remove('is-visible');
+      }
+    }
+
+    window.addEventListener('scroll', toggleBackToTopButton, { passive: true });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  </script>
+<script defer="" src="../scripts/mobile-nav.js?v=20261004-mobile-menu"></script></body>
+</html>
