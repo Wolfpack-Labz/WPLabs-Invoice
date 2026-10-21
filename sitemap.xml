@@ -29,4 +29,13 @@
   {% for post in blog_posts %}
   <url><loc>{{ site.url }}{{ post.url }}</loc><lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod></url>
   {% endfor %}
+  <url><loc>https://wolfpack-labs.com/womens-health/index.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/privacy-policy.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/consumer-health-data.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/terms.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/disclosures.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/data-request-deletion.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/account-help.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/accessibility.html</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://wolfpack-labs.com/womens-health/support.html</loc><lastmod>2026-10-20</lastmod></url>
 </urlset>
