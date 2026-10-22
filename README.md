@@ -56,6 +56,6 @@ Navigation uses an explicit button with aria-expanded and a hidden/visible panel
 
 
 ## October 5 article, tool and download update
-The blog now contains 19 articles. Six new Field Notes cover customer intake, accepted estimates, change orders, expense tracking, Net 30 and business email security. Their date metadata drives the Blog page and the newest-five homepage carousel automatically. Field Notes 19 through 15 appear on the homepage initially; Field Note 14 remains in the Blog listing. The draft template starts at Field Note 20.
+The blog now contains 41 articles. Five new Field Notes cover invoice email templates, invoice numbering, passkeys, iPhone photo backups, and symptom journaling. Their October 21, 2026 dates place Field Notes 41 through 37 in the newest-five homepage carousel. The Blog page generates the Health Journaling category automatically and retains 12-article pagination. The draft template starts at Field Note 42.
 
 Tools now includes six calculators. Resources provides eight downloadable products, including a 200-entry expense workbook. Calculator methods are documented in CALCULATOR-NOTES.md, and download instructions are in resources/downloads/READ-ME.md. The sitemap includes the three new calculator URLs and automatically generates every blog URL.
