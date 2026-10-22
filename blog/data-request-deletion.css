@@ -1,0 +1,26 @@
+/* Page-specific styles for data-request-deletion.html. */
+
+ol { padding-left: 22px; }
+
+.warning { background: #fff7ed; border: 1px solid #fed7aa; padding: 14px 16px; border-radius: 12px; margin: 18px 0; color: #7c2d12; }
+
+.request-box {
+      background: #f8fafc;
+      border: 1px solid #dbe3ef;
+      border-radius: 14px;
+      padding: 18px;
+      margin: 18px 0;
+    }
+
+.button-link {
+      display: inline-block;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 10px 0 4px;
+    }
+
+.small { font-size: 13px; color: #7f7f7f; }

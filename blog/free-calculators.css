@@ -1,0 +1,36 @@
+/* These rules are scoped to the free tools and calculator pages. */
+.tools-collection-heading{font-size:2rem;margin:0 0 26px}
+.free-tools-grid .tool-card{min-width:0}
+.free-tools-grid .tool-card h3{overflow-wrap:anywhere}
+.free-calculator .calc-input-note{margin:0 0 25px;font-size:1rem;color:var(--text-soft)}
+.free-calculator .field-hint{font-size:.875rem;line-height:1.5;margin:8px 0 0}
+.free-calculator input,.free-calculator select{min-height:48px}
+.free-calculator input[aria-invalid="true"],.free-calculator select[aria-invalid="true"]{box-shadow:inset 0 0 0 2px var(--accent);border-radius:8px}
+.free-calculator .result-breakdown div{padding:5px 0;line-height:1.5}
+.free-calculator .print-result{align-self:flex-start;margin-top:22px}
+.free-calculator .calc-error{margin:20px 0 0;line-height:1.6}
+.free-calculator .result-value{font-variant-numeric:tabular-nums}
+.calculator-next{border-top:1px solid var(--border);padding:30px 0;margin:0 0 38px}
+.calculator-next h2{font-size:1.8rem;margin:0 0 20px}
+.calc-explainer{margin-bottom:38px}
+@media(max-width:640px){
+ .free-calculator .field label{font-size:1.0625rem}
+ .free-calculator input,.free-calculator select{font-size:1.125rem}
+ .free-calculator .field-hint{font-size:1rem}
+ .free-calculator .calc-input-note,.free-calculator .result-breakdown,.free-calculator .calc-error,.calc-explainer p{font-size:1.125rem}
+ .free-calculator .actions{gap:10px}
+ .free-calculator .actions .button{flex:1;min-width:100px}
+ .free-calculator .result-value{font-size:2.7rem}
+ .free-calculator input[type="date"]{min-width:0}
+}
+@media print{
+ .topbar,.friendly-footer,.breadcrumbs,.calculator-next,.print-result,.calculator-form .actions,.skip-link,.calc-explainer a{display:none!important}
+ .shell{width:100%;margin:0}
+ .page-intro{padding:12px 0 20px}
+ .free-calculator{grid-template-columns:1.2fr .8fr;overflow:visible;break-inside:avoid}
+ .calculator-form,.result-panel{padding:20px}
+ .fields-grid{gap:14px;grid-template-columns:1fr 1fr}
+ .result-value{font-size:2.2rem}
+ .calc-explainer{margin:20px 0}
+ body{background:white!important}
+}

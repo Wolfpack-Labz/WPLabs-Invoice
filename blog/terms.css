@@ -1,0 +1,5 @@
+/* Page-specific styles for terms.html. */
+
+h1, h2, h3, h4 { line-height: 1.25; color: #000; }
+
+h4 { font-size: 16px; margin-top: 20px; }

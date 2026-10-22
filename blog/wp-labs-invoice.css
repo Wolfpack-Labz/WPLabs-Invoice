@@ -1,0 +1,200 @@
+/* WP Labs: Invoice product page — compact gallery-sized screenshots */
+
+.wp-labs-invoice-page .nav a[aria-current="page"] {
+  color: #ffffff;
+  background: rgba(37, 99, 235, 0.96);
+  border-color: rgba(191, 219, 254, 0.75);
+}
+
+.wp-labs-invoice-page .seo-hero {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.wp-labs-invoice-page .seo-visual {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: center;
+  padding: 16px;
+}
+
+.wp-labs-invoice-page .seo-visual > img,
+.wp-labs-invoice-page .seo-split > img {
+  width: auto;
+  aspect-ratio: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.wp-labs-invoice-screen-card {
+  flex: 0 0 clamp(132px, 14vw, 170px);
+  align-self: flex-start;
+  height: fit-content;
+  width: clamp(132px, 14vw, 170px);
+  min-width: clamp(132px, 14vw, 170px);
+  max-width: 170px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+}
+
+.wp-labs-invoice-screen-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.wp-labs-invoice-screen-card figcaption {
+  display: grid;
+  gap: 3px;
+  padding: 11px 10px 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.wp-labs-invoice-screen-card figcaption strong {
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.wp-labs-invoice-screen-card figcaption span {
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.wp-labs-invoice-page .seo-proof-strip {
+  width: 100%;
+  max-width: 170px;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.wp-labs-invoice-page .seo-proof-strip span {
+  padding: 8px 10px;
+}
+
+.wp-labs-invoice-page .seo-split {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.wp-labs-invoice-page #freelancer-workflow .seo-split {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.wp-labs-invoice-page .seo-split .wp-labs-invoice-screen-card {
+  justify-self: center;
+}
+
+.wp-labs-invoice-preview-section {
+  overflow: hidden;
+}
+
+.wp-labs-invoice-screen-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 5px 5px 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #93c5fd #eff6ff;
+}
+
+.wp-labs-invoice-screen-row .wp-labs-invoice-screen-card {
+  scroll-snap-align: start;
+}
+
+.wp-labs-invoice-screen-row::-webkit-scrollbar {
+  height: 9px;
+}
+
+.wp-labs-invoice-screen-row::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #eff6ff;
+}
+
+.wp-labs-invoice-screen-row::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #93c5fd;
+}
+
+@media (max-width: 900px) {
+  .wp-labs-invoice-page .seo-hero,
+  .wp-labs-invoice-page .seo-split,
+  .wp-labs-invoice-page #freelancer-workflow .seo-split {
+    grid-template-columns: 1fr;
+  }
+
+  .wp-labs-invoice-page .seo-visual,
+  .wp-labs-invoice-page .seo-split .wp-labs-invoice-screen-card {
+    justify-self: start;
+  }
+
+  .wp-labs-invoice-page #freelancer-workflow .wp-labs-invoice-screen-card {
+    order: 2;
+  }
+}
+
+@media (max-width: 620px) {
+  .wp-labs-invoice-screen-card {
+    flex-basis: clamp(96px, 31vw, 122px);
+    width: clamp(96px, 31vw, 122px);
+    min-width: clamp(96px, 31vw, 122px);
+    max-width: 122px;
+    border-radius: 18px;
+  }
+
+  .wp-labs-invoice-screen-card img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .wp-labs-invoice-screen-card figcaption {
+    padding: 8px;
+  }
+
+  .wp-labs-invoice-screen-card figcaption strong {
+    font-size: 11px;
+  }
+
+  .wp-labs-invoice-screen-card figcaption span {
+    display: none;
+  }
+
+  .wp-labs-invoice-page .seo-proof-strip {
+    max-width: 122px;
+  }
+
+  .wp-labs-invoice-screen-row {
+    gap: 9px;
+    padding: 4px 4px 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .wp-labs-invoice-screen-card {
+    flex-basis: 32vw;
+    width: 32vw;
+    min-width: 32vw;
+  }
+
+  .wp-labs-invoice-screen-card img {
+    height: auto;
+    min-height: 0;
+  }
+}

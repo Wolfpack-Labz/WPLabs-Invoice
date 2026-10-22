@@ -1,0 +1,15 @@
+/* Client-side article pagination; colors follow the existing site theme. */
+.blog-browser .story-card[hidden], .blog-pagination[hidden] { display: none !important; }
+#blog-results { scroll-margin-top: 24px; }
+#blog-results:focus { outline: none; }
+#blog-results:focus-visible { outline: 3px solid var(--teal); outline-offset: 6px; border-radius: 4px; }
+.blog-pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin: 32px 0 12px; padding: 24px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; }
+.page-numbers { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+.page-button { min-width: 44px; min-height: 44px; padding: 8px 13px; border: 1px solid var(--border); border-radius: 10px; color: var(--text); background: var(--bg); font-weight: 600; }
+.page-button:hover:not(:disabled) { border-color: var(--teal); color: var(--teal); }
+.page-button[aria-current="page"], .page-button[aria-current="page"]:hover { border-color: var(--teal); color: #fff; background: var(--teal); }
+.page-button:disabled { cursor: default; opacity: .5; }
+.page-button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.page-gap { padding: 0 3px; color: var(--text-soft); }
+.page-summary { flex-basis: 100%; margin: 0; text-align: center; font-size: .875rem; }
+@media (max-width: 480px) { .blog-pagination { padding: 18px 12px; gap: 10px; } .page-numbers { order: -1; flex-basis: 100%; } .page-previous, .page-next { flex: 1; } }
