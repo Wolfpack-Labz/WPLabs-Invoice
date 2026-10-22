@@ -1,0 +1,95 @@
+/* Shared policy and directory layout for both Wolfpack Labs apps.
+   Colors inherit each app's tokens from site-system.css. */
+.app-policies .page-heading { padding: 22px 0 34px; }
+.app-policies .page-heading h1 { margin: 14px 0 22px; max-width: 900px; }
+.app-policies .page-heading .lead { max-width: 740px; color: var(--text-soft); margin: 0 0 18px; }
+.app-policies .updated { margin: 24px 0 0; color: var(--text-soft); }
+.app-policies .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 700; line-height: 1.6; }
+.app-policies .notice { background: var(--card-muted); border: 1px solid var(--border); border-radius: 16px; padding: 18px 24px; margin: 0 0 40px; color: var(--accent-dark); font-size: .9375rem; }
+.app-policies .notice a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 4px; }
+.app-policies .reading-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: start; gap: 40px; margin-bottom: 64px; }
+.app-policies .page-toc { position: sticky; top: 24px; display: flex; flex-direction: column; border-top: 2px solid var(--border); padding: 20px 0; max-height: calc(100vh - 48px); overflow: auto; }
+.app-policies .page-toc .eyebrow { margin: 0 0 14px; color: var(--accent); background: transparent !important; }
+.app-policies .page-toc a { font-size: .875rem; color: var(--text-soft); line-height: 1.5; padding: 8px 3px; text-decoration: none; }
+.app-policies .page-toc a:hover { color: var(--accent-dark); text-decoration: underline; }
+.app-policies .policy-content { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: clamp(22px, 4vw, 46px); min-width: 0; overflow-wrap: anywhere; }
+.app-policies .policy-content section { scroll-margin-top: 28px; padding-top: 30px; margin-top: 30px; border-top: 1px solid var(--border); }
+.app-policies .policy-content section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+.app-policies .policy-content h2 { margin: 0 0 20px; }
+.app-policies .policy-content h3 { margin: 24px 0 16px; }
+.app-policies .policy-content h4 { margin: 20px 0 12px; }
+.app-policies .policy-content p { margin: 0 0 18px; color: var(--text-soft); }
+.app-policies .policy-content :is(ul, ol) { padding-left: 24px; margin: 0 0 18px; }
+.app-policies .policy-content li { color: var(--text-soft); margin-bottom: 10px; }
+.app-policies .policy-content strong { color: var(--text); }
+.app-policies .policy-content a { color: var(--accent-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.app-policies .policy-content .notice { margin: 22px 0; }
+.app-policies .policy-content :is(.request-box, .summary-box, .warning) { padding: 20px 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--card-muted); margin: 22px 0; }
+.app-policies .policy-content .warning { border-left: 3px solid var(--accent); }
+.app-policies .policy-content :is(.notice, .request-box, .summary-box, .warning) > :last-child { margin-bottom: 0; }
+.app-policies .back-link { display: inline-block; margin-top: 36px; padding: 8px 0; font-size: .875rem; }
+.app-policies .table-wrap { max-width: 100%; overflow: auto; margin: 22px 0; }
+.app-policies .policy-content table { border-collapse: collapse; width: 100%; font-size: .9375rem; line-height: 1.7; }
+.app-policies .policy-content caption { text-align: left; padding: 0 0 16px; color: var(--text-soft); }
+.app-policies .policy-content :is(th, td) { padding: 16px 14px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.app-policies .policy-content thead th { background: var(--card-muted); font-weight: 700; }
+.app-policies .policy-content tbody th { width: 28%; font-weight: 700; }
+.app-policies .policy-content tbody td { color: var(--text-soft); }
+.app-policies .hub-section { padding: 64px 0; scroll-margin-top: 24px; }
+.app-policies .section-heading { display: flex; gap: 32px; align-items: end; justify-content: space-between; margin: 0 0 30px; }
+.app-policies .section-heading h2 { margin: 0; }
+.app-policies .hub-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.app-policies .hub-card { display: flex; flex-direction: column; align-items: start; padding: 30px; border-radius: 20px; border: 1px solid var(--border); background: var(--card); text-decoration: none; color: var(--text); }
+.app-policies .hub-card:hover { border-color: var(--accent); text-decoration: none; background: var(--card-muted); color: var(--text); }
+.app-policies .hub-card h3 { margin: 22px 0 14px; }
+.app-policies .hub-card p { color: var(--text-soft); margin: 0 0 22px; }
+.app-policies .card-index { font-size: .75rem; letter-spacing: .1em; color: var(--accent); }
+.app-policies .card-link { font-size: .875rem; font-weight: 700; margin-top: auto; color: var(--accent-dark); }
+.app-policies :is(.app-note, .health-note) { background: var(--card-muted); border: 1px solid var(--border); padding: 36px 40px; border-radius: 20px; margin-bottom: 64px; scroll-margin-top: 24px; }
+.app-policies :is(.app-note, .health-note) h2 { margin: 0 0 18px; }
+.app-policies :is(.app-note, .health-note) > p:not(.eyebrow) { max-width: 850px; color: var(--text-soft); margin: 0 0 18px; }
+.app-policies .app-note a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 4px; }
+.app-policies .app-note > :last-child { margin-bottom: 0; }
+.app-policies .app-footer { display: grid; grid-template-columns: 1fr 1.4fr; gap: 28px; padding: 36px 0 28px; border-top: 1px solid var(--border); color: var(--text-soft); }
+.app-policies .app-footer .product-footer { font-family: Georgia, 'Times New Roman', serif; text-decoration: none; color: var(--text); }
+.app-policies .app-footer p { margin: 10px 0 0; color: var(--text-soft); }
+.app-policies .app-footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; align-content: start; justify-content: flex-end; }
+.app-policies .app-footer nav a { min-height: 30px; display: inline-flex; align-items: center; color: var(--accent-dark); text-decoration: underline; text-underline-offset: 4px; }
+.app-policies .app-footer .copyright { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 960px) {
+  .app-policies .reading-layout { grid-template-columns: 190px minmax(0, 1fr); gap: 28px; }
+}
+@media (max-width: 860px) {
+  .app-policies .reading-layout { grid-template-columns: 1fr; gap: 22px; }
+  .app-policies .page-toc { position: static; max-height: none; display: grid; grid-template-columns: 1fr 1fr; padding-top: 18px; gap: 0 20px; }
+  .app-policies .page-toc .eyebrow { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .app-policies .page-heading { padding: 16px 0 26px; }
+  .app-policies .notice { padding: 16px 18px; margin-bottom: 26px; }
+  .app-policies .page-toc { grid-template-columns: 1fr; }
+  .app-policies .policy-content { padding: 24px 20px; }
+  .app-policies .policy-content section { padding-top: 24px; margin-top: 24px; }
+  .app-policies .policy-content :is(.request-box, .summary-box, .warning) { padding: 18px; }
+  .app-policies .reading-layout { margin-bottom: 40px; }
+  .app-policies .hub-section { padding: 40px 0; }
+  .app-policies .hub-grid { grid-template-columns: 1fr; }
+  .app-policies .hub-card { padding: 24px; }
+  .app-policies .hub-card h3 { margin-top: 14px; }
+  .app-policies .section-heading { align-items: start; flex-direction: column; gap: 16px; }
+  .app-policies :is(.app-note, .health-note) { padding: 26px; margin-bottom: 40px; }
+  .app-policies .app-footer { grid-template-columns: 1fr; padding-top: 28px; }
+  .app-policies .app-footer nav { justify-content: flex-start; gap: 12px 20px; }
+  .app-policies .table-wrap { padding: 4px; }
+}
+@media print {
+  .app-policies :is(.page-toc, .app-footer, .back-link) { display: none !important; }
+  .app-policies .reading-layout { display: block; }
+  .app-policies .policy-content { border: 0; padding: 0; }
+  .app-policies .page-heading { padding-top: 0; }
+  .app-policies .policy-content h2 { break-after: avoid; }
+  .app-policies .notice { background: white; border: 1px solid #999; }
+  .app-policies .table-wrap { overflow: visible; }
+  .app-policies .policy-content table { min-width: 0; }
+  .app-policies .policy-content tr { break-inside: avoid; }
+}
