@@ -1,0 +1,20 @@
+/* Reading aids for the October 2026 guides; typography remains shared. */
+.article-body .table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 22px 0 26px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.article-body .table-wrap table { min-width: 32rem; margin: 0; }
+.article-body .table-wrap caption {
+  padding: 14px 12px;
+  text-align: left;
+  color: var(--text-soft);
+}
+.article-body code { overflow-wrap: anywhere; }
+@media print {
+  .article-body .table-wrap { overflow: visible; border: 0; }
+  .article-body .table-wrap table { min-width: 0; }
+}
