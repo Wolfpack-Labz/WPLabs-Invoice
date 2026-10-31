@@ -1,0 +1,75 @@
+/* Full portrait previews: preserve embedded headlines and navigation. */
+.invoice-gallery-section,
+.invoice-home-previews,
+.invoice-report-section { min-width: 0; }
+.invoice-screen-gallery {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 8px 4px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #7892a8 transparent;
+}
+.invoice-shot {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dce4ed;
+  border-radius: 16px;
+  background: #f5f8fc;
+}
+.invoice-screen-gallery > .invoice-shot {
+  flex: 0 0 clamp(220px, 25vw, 280px);
+  scroll-snap-align: start;
+}
+.invoice-shot > a,
+.wp-labs-invoice-screen-card > a { display: block; }
+.invoice-shot img,
+.app-preview.invoice-promo-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+}
+.invoice-shot figcaption {
+  display: grid;
+  gap: 5px;
+  padding: 15px 17px;
+  border-top: 1px solid #dce4ed;
+  background: #fff;
+  color: #101b2b;
+}
+.invoice-shot figcaption strong { font-size: 1rem; line-height: 1.35; }
+.invoice-shot figcaption span { font-size: .875rem; line-height: 1.5; color: #566579; }
+.invoice-feature-previews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+  max-width: 940px;
+  margin-inline: auto;
+}
+.app-preview.invoice-promo-preview { width: min(100%, 300px); max-width: 300px; justify-self: center; padding: 0; }
+.wp-labs-invoice-screen-card {
+  flex-basis: clamp(210px, 22vw, 260px);
+  width: clamp(210px, 22vw, 260px);
+  min-width: 210px;
+  max-width: 260px;
+  border-radius: 16px;
+}
+.wp-labs-invoice-screen-card figcaption strong { font-size: .9375rem; }
+.wp-labs-invoice-screen-card figcaption span { font-size: .8125rem; }
+.wp-labs-invoice-page .seo-proof-strip { max-width: 260px; }
+.wp-labs-invoice-screen-row { scroll-snap-type: x proximity; }
+@media (max-width: 700px) {
+  .invoice-feature-previews { grid-template-columns: 1fr; max-width: 310px; gap: 24px; }
+  .invoice-screen-gallery > .invoice-shot { flex-basis: min(76vw, 280px); }
+  .wp-labs-invoice-screen-card { flex-basis: 210px; width: 210px; min-width: 210px; max-width: 210px; }
+  .wp-labs-invoice-screen-card figcaption span { display: block; }
+  .wp-labs-invoice-page .seo-proof-strip { max-width: 210px; }
+}
