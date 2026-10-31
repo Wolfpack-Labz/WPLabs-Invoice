@@ -56,6 +56,16 @@ Navigation uses an explicit button with aria-expanded and a hidden/visible panel
 
 
 ## October 5 article, tool and download update
-The blog now contains 41 articles. Five new Field Notes cover invoice email templates, invoice numbering, passkeys, iPhone photo backups, and symptom journaling. Their October 21, 2026 dates place Field Notes 41 through 37 in the newest-five homepage carousel. The Blog page generates the Health Journaling category automatically and retains 12-article pagination. The draft template starts at Field Note 42.
+The blog now contains 41 articles. Five new Field Notes cover invoice email templates, invoice numbering, passkeys, iPhone photo backups, and symptom journaling. Their October 21, 2026 dates place Field Notes 41 through 37 in the newest-five homepage carousel. The Blog page generates the Health Journaling category automatically and retains 12-article pagination. The draft template now starts at Field Note 47; see the October 30 update below.
 
 Tools now includes six calculators. Resources provides eight downloadable products, including a 200-entry expense workbook. Calculator methods are documented in CALCULATOR-NOTES.md, and download instructions are in resources/downloads/READ-ME.md. The sitemap includes the three new calculator URLs and automatically generates every blog URL.
+
+
+## October 30, 2026 everyday IT guides
+The blog now contains 46 articles. Field Notes 42–46 cover connected Wi-Fi without internet, offline printers, missing external monitors, missing password-reset emails, and microphone problems in Zoom or Teams.
+
+Each new guide includes an answer summary, practical checks, Windows/Mac guidance where relevant, official support links, descriptive internal links, common questions, a linked contents list, and related reading. Metadata includes a canonical URL, search description, social previews, BlogPosting data, and BreadcrumbList data.
+
+Five established guides now link to the corresponding new guides. Published dates keep the new articles in the homepage's newest-five carousel and Blog search/category listings on the next Jekyll build. The sitemap uses last_modified_at when supplied, falling back to the original publication date. The draft template reserves Field Note 47 next.
+
+See BLOG-UPDATE.md for the exact changed-file list and deployment notes.
