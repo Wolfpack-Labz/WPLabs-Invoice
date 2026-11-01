@@ -1,169 +1,779 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en" data-site-theme="invoice">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice</title>
-<meta content="WP Labs: Invoice helps contractors, freelancers, consultants, and self-employed professionals create estimates and invoices, organize customers, attach job photos, and track payments." name="description"/>
-<meta content="Wolfpack Labs LLC" name="author"/>
-<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="googlebot"/>
-<meta content="#f4f7fb" name="theme-color"/>
-<link href="https://wolfpack-labs.com/wp-labs-invoice.html" rel="canonical"/>
-<meta content="website" property="og:type"/>
-<meta content="Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice" property="og:title"/>
-<meta content="Create professional estimates and invoices, organize customers, attach job photos, and track payments with WP Labs: Invoice." property="og:description"/>
-<meta content="https://wolfpack-labs.com/wp-labs-invoice.html" property="og:url"/>
-<meta property="og:image" content="https://wolfpack-labs.com/images/gallery1.png?v=20261020-brand3">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="1024">
-<meta property="og:image:alt" content="WP Labs: Invoice app icon">
-<meta content="Wolfpack Labs" property="og:site_name"/>
-<meta name="twitter:card" content="summary">
-<meta content="Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice" name="twitter:title"/>
-<meta content="Create professional estimates and invoices, organize customers, attach job photos, and track payments with WP Labs: Invoice." name="twitter:description"/>
-<meta name="twitter:image" content="https://wolfpack-labs.com/images/gallery1.png?v=20261020-brand3">
-<meta name="twitter:image:alt" content="WP Labs: Invoice app icon">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice</title>
+    <meta
+      content="WP Labs: Invoice helps contractors, freelancers, consultants, and self-employed professionals create estimates and invoices, organize customers, attach job photos, and track payments."
+      name="description"
+    />
+    <meta content="Wolfpack Labs LLC" name="author" />
+    <meta
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      name="robots"
+    />
+    <meta
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      name="googlebot"
+    />
+    <meta content="#f4f7fb" name="theme-color" />
+    <link href="https://wolfpack-labs.com/wp-labs-invoice.html" rel="canonical" />
+    <meta content="website" property="og:type" />
+    <meta
+      content="Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice"
+      property="og:title"
+    />
+    <meta
+      content="Create professional estimates and invoices, organize customers, attach job photos, and track payments with WP Labs: Invoice."
+      property="og:description"
+    />
+    <meta content="https://wolfpack-labs.com/wp-labs-invoice.html" property="og:url" />
+    <meta
+      property="og:image"
+      content="https://wolfpack-labs.com/images/screenshots/gallery1.png?v=20261020-brand3"
+    />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="WP Labs: Invoice app icon" />
+    <meta content="Wolfpack Labs" property="og:site_name" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      content="Invoice App for Contractors &amp; Freelancers | WP Labs: Invoice"
+      name="twitter:title"
+    />
+    <meta
+      content="Create professional estimates and invoices, organize customers, attach job photos, and track payments with WP Labs: Invoice."
+      name="twitter:description"
+    />
+    <meta
+      name="twitter:image"
+      content="https://wolfpack-labs.com/images/screenshots/gallery1.png?v=20261020-brand3"
+    />
+    <meta name="twitter:image:alt" content="WP Labs: Invoice app icon" />
 
+    <link href="styles/shared.css" rel="stylesheet" />
+    <link href="styles/pages/seo-landing.css" rel="stylesheet" />
+    <link href="styles/pages/wp-labs-invoice.css?v=20260724-2" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://wolfpack-labs.com/wp-labs-invoice.html#webpage",
+            "url": "https://wolfpack-labs.com/wp-labs-invoice.html",
+            "name": "Invoice App for Contractors and Freelancers | WP Labs: Invoice",
+            "description": "WP Labs: Invoice helps contractors, freelancers, consultants, and self-employed professionals create estimates and invoices, organize customers, attach job photos, and track payments.",
+            "isPartOf": { "@id": "https://wolfpack-labs.com/#website" },
+            "about": { "@id": "https://wolfpack-labs.com/#wp-labs-invoice" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://wolfpack-labs.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "WP Labs: Invoice",
+                "item": "https://wolfpack-labs.com/wp-labs-invoice.html"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can contractors create estimates before invoicing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. WP Labs: Invoice supports estimate workflows before the final invoice so contractors can organize labor, materials, notes, and customer details."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can freelancers customize invoices and save repeat services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. WP Labs: Invoice includes business branding and saved item workflows for repeat services, rates, products, and descriptions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can job photos be connected to invoices and estimates?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "WP Labs: Invoice is designed to keep job photos and supporting context connected to relevant customer documents."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <style data-combined-page="true" data-version="20260726-spacing-half">
+      .audience-jump-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin: 0.8rem 0 1.125rem;
+      }
 
+      .audience-jump-nav a,
+      .audience-jump-nav a:visited {
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0.7rem 1.15rem;
+        border: 1px solid rgba(219, 234, 254, 0.42);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #f8fafc !important;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.15;
+        white-space: nowrap;
+        box-shadow: 0 8px 20px rgba(2, 6, 23, 0.12);
+        transition:
+          background-color 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
 
+      .audience-jump-nav a:hover,
+      .audience-jump-nav a:focus-visible {
+        color: #ffffff !important;
+        background: #2563eb;
+        border-color: #93c5fd;
+        box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+        transform: translateY(-1px);
+        outline: none;
+      }
 
-<link href="styles/shared.css" rel="stylesheet"/>
-<link href="styles/pages/seo-landing.css" rel="stylesheet"/><link href="styles/pages/wp-labs-invoice.css?v=20260724-2" rel="stylesheet"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://wolfpack-labs.com/wp-labs-invoice.html#webpage","url":"https://wolfpack-labs.com/wp-labs-invoice.html","name":"Invoice App for Contractors and Freelancers | WP Labs: Invoice","description":"WP Labs: Invoice helps contractors, freelancers, consultants, and self-employed professionals create estimates and invoices, organize customers, attach job photos, and track payments.","isPartOf":{"@id":"https://wolfpack-labs.com/#website"},"about":{"@id":"https://wolfpack-labs.com/#wp-labs-invoice"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wolfpack-labs.com/"},{"@type":"ListItem","position":2,"name":"WP Labs: Invoice","item":"https://wolfpack-labs.com/wp-labs-invoice.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can contractors create estimates before invoicing?","acceptedAnswer":{"@type":"Answer","text":"Yes. WP Labs: Invoice supports estimate workflows before the final invoice so contractors can organize labor, materials, notes, and customer details."}},{"@type":"Question","name":"Can freelancers customize invoices and save repeat services?","acceptedAnswer":{"@type":"Answer","text":"Yes. WP Labs: Invoice includes business branding and saved item workflows for repeat services, rates, products, and descriptions."}},{"@type":"Question","name":"Can job photos be connected to invoices and estimates?","acceptedAnswer":{"@type":"Answer","text":"WP Labs: Invoice is designed to keep job photos and supporting context connected to relevant customer documents."}}]}]}</script>
-<style data-combined-page="true" data-version="20260726-spacing-half">
-.audience-jump-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .9rem;
-  margin: .8rem 0 1.125rem;
-}
+      @media (max-width: 640px) {
+        .audience-jump-nav {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.75rem;
+          margin-top: 0.675rem;
+          margin-bottom: 0.875rem;
+        }
 
-.audience-jump-nav a,
-.audience-jump-nav a:visited {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: .7rem 1.15rem;
-  border: 1px solid rgba(219, 234, 254, .42);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .10);
-  color: #f8fafc !important;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.15;
-  white-space: nowrap;
-  box-shadow: 0 8px 20px rgba(2, 6, 23, .12);
-  transition: background-color .2s ease, border-color .2s ease,
-              color .2s ease, transform .2s ease, box-shadow .2s ease;
-}
+        .audience-jump-nav a,
+        .audience-jump-nav a:visited {
+          width: 100%;
+          min-height: 42px;
+          padding: 0.6rem 0.7rem;
+          font-size: 13px;
+          white-space: normal;
+          text-align: center;
+        }
+      }
 
-.audience-jump-nav a:hover,
-.audience-jump-nav a:focus-visible {
-  color: #ffffff !important;
-  background: #2563eb;
-  border-color: #93c5fd;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, .28);
-  transform: translateY(-1px);
-  outline: none;
-}
-
-@media (max-width: 640px) {
-  .audience-jump-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .75rem;
-    margin-top: .675rem;
-    margin-bottom: .875rem;
-  }
-
-  .audience-jump-nav a,
-  .audience-jump-nav a:visited {
-    width: 100%;
-    min-height: 42px;
-    padding: .6rem .7rem;
-    font-size: 13px;
-    white-space: normal;
-    text-align: center;
-  }
-}
-
-@media (max-width: 390px) {
-  .audience-jump-nav {
-    grid-template-columns: 1fr;
-  }
-}
-</style><link href="styles/logo.css?v=20260802-white-120" rel="stylesheet"/><link href="styles/warm.css?v=20261004-mobile-menu" rel="stylesheet"/><link rel="icon" href="favicon.ico?v=20261020-brand3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png?v=20261020-brand3"><link rel="icon" type="image/png" sizes="192x192" href="images/icons/favicon-192.png?v=20261020-brand3"><link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png?v=20261020-brand3"><link rel="manifest" href="site.webmanifest?v=20261020-brand3"><link rel="stylesheet" href="styles/site-branding.css?v=20261020-brand3"><link rel="stylesheet" href="styles/site-system.css?v=20261021-type5"><link rel="stylesheet" href="styles/pages/invoice-screenshots.css?v=20261031-screenshots1"></head>
-<body class="wp-labs-invoice-page has-site-shell"><div class="shell site-shell"><a class="skip-link" href="#main-content">Skip to content</a><header class="topbar"><a aria-label="Wolfpack Labs home" class="friendly-brand" href="index.html"><img class="site-wolf-mark" src="images/wolfpack-labs-mark-192.png?v=20261020-brand3" width="48" height="48" alt="" decoding="async"><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a><div class="nav-accordion"><button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open primary navigation" class="nav-toggle" hidden="" type="button"><span>Menu</span><span aria-hidden="true" data-menu-icon="">☰</span></button><nav aria-label="Primary navigation" class="nav" id="primary-navigation"><a href="apps.html" aria-current="true">Apps</a><a href="tools.html">Tools</a><a href="resources.html">Resources</a><a href="blog.html">Blog</a></nav></div></header><main class="site-content" id="main-content">
-
-<section class="seo-hero">
-<div>
-<span class="seo-kicker">Mobile invoicing for independent work</span>
-<h1>One simple invoice app for contractors and freelancers</h1>
-<p class="seo-lead">WP Labs: Invoice brings estimates, invoices, customers, payments, and job documentation into one focused mobile workflow for contractors, freelancers, consultants, and other self-employed professionals.</p>
-<div class="seo-actions"><a class="button" href="https://apps.apple.com/us/app/wp-labs-invoice/id6797280708">View on the App Store</a><a class="seo-button-secondary" href="#who-it-helps">See who it helps</a><a class="seo-button-secondary" href="invoice-app/index.html">Policies &amp; privacy</a></div>
-</div>
-<div class="seo-visual"><figure class="wp-labs-invoice-screen-card wp-labs-invoice-screen-card-featured"><a href="images/screenshots/gallery1.png" aria-label="View business dashboard screenshot at full size"><img src="images/screenshots/gallery1.png" alt="WP Labs: Invoice — business dashboard: Revenue, balances, and quick actions at a glance." width="853" height="1844" fetchpriority="high" decoding="async"/></a><figcaption><strong>Business dashboard</strong><span>Revenue, balances, and quick actions at a glance.</span></figcaption></figure><div class="seo-proof-strip"><span>Estimates</span><span>Invoices</span><span>Payments</span></div></div>
-</section>
-<section class="seo-section" id="features">
-<div class="seo-section-header"><span class="seo-kicker">Everything connected</span><h2>Move from customer request to paid invoice</h2><p>Keep the information behind the work connected instead of rebuilding it across notes, messages, spreadsheets, and separate finance tools.</p></div>
-<div class="seo-steps">
-<article class="seo-step"><h3>Add the customer</h3><p>Save the contact and business details needed for estimates, invoices, and follow-up.</p></article>
-<article class="seo-step"><h3>Prepare the estimate</h3><p>List services, labor, materials, quantities, rates, notes, and expected totals.</p></article>
-<article class="seo-step"><h3>Document the work</h3><p>Keep job photos and useful context connected to the customer and document.</p></article>
-<article class="seo-step"><h3>Send and track</h3><p>Review the final invoice, share it with the customer, and follow payment status.</p></article>
-</div>
-</section><section class="seo-section wp-labs-invoice-preview-section" id="app-preview">
-<div class="seo-section-header">
-<span class="seo-kicker">App preview</span>
-<h2>Take a closer look at WP Labs: Invoice</h2>
-<p>Explore all seven previews: your dashboard, invoices, customers, reports, detailed performance, business tools, and sign-in. Scroll through or select an image for the full-size view.</p>
-</div>
-<div aria-label="All seven WP Labs: Invoice app screenshots" class="wp-labs-invoice-screen-row" tabindex="0" role="region"><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-invoice-dashboard.png" aria-label="View business dashboard screenshot at full size"><img src="images/screenshots/wp-labs-invoice-dashboard.png" alt="WP Labs: Invoice — business dashboard: Revenue, balances, and quick actions at a glance." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Business dashboard</strong><span>Revenue, balances, and quick actions at a glance.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-invoice.png" aria-label="View invoice tracking screenshot at full size"><img src="images/screenshots/wp-labs-invoice.png" alt="WP Labs: Invoice — invoice tracking: Keep paid, pending, and overdue invoices organized." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Invoice tracking</strong><span>Keep paid, pending, and overdue invoices organized.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-customers.png" aria-label="View customer details screenshot at full size"><img src="images/screenshots/wp-labs-customers.png" alt="WP Labs: Invoice — customer details: Keep contacts and business details together." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Customer details</strong><span>Keep contacts and business details together.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-reports.png" aria-label="View business reports screenshot at full size"><img src="images/screenshots/wp-labs-reports.png" alt="WP Labs: Invoice — business reports: Follow revenue and expenses over time." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Business reports</strong><span>Follow revenue and expenses over time.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-details.png" aria-label="View detailed performance screenshot at full size"><img src="images/screenshots/wp-labs-details.png" alt="WP Labs: Invoice — detailed performance: Review profit, payments, and unpaid balances." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Detailed performance</strong><span>Review profit, payments, and unpaid balances.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-nav.png" aria-label="View business tools screenshot at full size"><img src="images/screenshots/wp-labs-nav.png" alt="WP Labs: Invoice — business tools: Find estimates, saved services, and recurring invoices." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Business tools</strong><span>Find estimates, saved services, and recurring invoices.</span></figcaption></figure><figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/wp-labs-invoice-login.png" aria-label="View sign in screenshot at full size"><img src="images/screenshots/wp-labs-invoice-login.png" alt="WP Labs: Invoice — sign in: Access your workspace with email, Google, or Apple." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Sign in</strong><span>Access your workspace with email, Google, or Apple.</span></figcaption></figure></div>
-</section>
-<section class="seo-section" id="who-it-helps">
-<div class="seo-section-header"><span class="seo-kicker">Built for independent professionals</span><h2>One product page, two common ways of working</h2><p>Contractors and freelancers may deliver different services, but both need a clear path from scope and customer details to a professional invoice.</p></div>
-<div class="seo-grid-2">
-<article class="seo-card" id="contractors"><div class="seo-icon">🛠️</div><h3>For contractors and field services</h3><p>Useful for handymen, painters, installers, cleaners, landscapers, mobile service providers, and owner-operators who quote jobs and bill customers directly.</p><ul class="seo-list"><li>Create estimates with labor and materials.</li><li>Attach job photos and supporting notes.</li><li>Keep each customer, job, and invoice connected.</li><li>Track payment status after the work is complete.</li></ul><a href="#contractor-workflow">See the contractor workflow</a></article>
-<article class="seo-card" id="freelancers"><div class="seo-icon">💼</div><h3>For freelancers and consultants</h3><p>Useful for designers, photographers, writers, consultants, specialists, and solo service businesses that bill by project, milestone, service, or retainer.</p><ul class="seo-list"><li>Create branded client estimates and invoices.</li><li>Save repeat services, items, and descriptions.</li><li>Review client contact details before sending.</li><li>Organize payment status by customer document.</li></ul><a href="#freelancer-workflow">See the freelancer workflow</a></article>
-</div>
-</section>
-<section class="seo-section" id="contractor-workflow">
-<div class="seo-split">
-<div class="seo-copy"><span class="seo-kicker">Contractor workflow</span><h2>Useful wherever the job happens</h2><p>Field-service work often starts with a site visit or customer request, not an invoice. WP Labs: Invoice keeps the estimate, job documentation, customer information, and final bill in the same workflow.</p><ul class="seo-list"><li>Build a professional estimate before beginning work.</li><li>Reuse common labor, materials, and service items.</li><li>Add photos that explain scope or completed work.</li><li>Create the final invoice without recreating customer details.</li><li>Keep payment status tied to the correct job document.</li></ul></div>
-<figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/gallery2.png" aria-label="View invoice tracking screenshot at full size"><img src="images/screenshots/gallery2.png" alt="WP Labs: Invoice — invoice tracking: Keep paid, pending, and overdue invoices organized." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Invoice tracking</strong><span>Keep paid, pending, and overdue invoices organized.</span></figcaption></figure>
-</div>
-</section>
-<section class="seo-section" id="freelancer-workflow">
-<div class="seo-split">
-<figure class="wp-labs-invoice-screen-card"><a href="images/screenshots/gallery5.png" aria-label="View business tools screenshot at full size"><img src="images/screenshots/gallery5.png" alt="WP Labs: Invoice — business tools: Find estimates, saved services, and recurring invoices." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Business tools</strong><span>Find estimates, saved services, and recurring invoices.</span></figcaption></figure>
-<div class="seo-copy"><span class="seo-kicker">Freelancer workflow</span><h2>Professional client billing without extra complexity</h2><p>Freelancers need clear documents that communicate scope, pricing, and payment expectations. WP Labs: Invoice is designed to keep that client-facing workflow polished and easy to review.</p><ul class="seo-list"><li>Present services, deliverables, milestones, rates, and totals.</li><li>Use business branding across customer-facing documents.</li><li>Save repeat work instead of retyping common services.</li><li>Preview customer details before sending an estimate or invoice.</li><li>Track outstanding and paid documents in one place.</li></ul></div>
-</div>
-</section>
-<section class="seo-section">
-<div class="seo-section-header"><span class="seo-kicker">Core tools</span><h2>Designed around everyday billing tasks</h2></div>
-<div class="seo-grid-3">
-<article class="seo-card"><h3>Estimates and invoices</h3><p>Create customer-ready documents with line items, quantities, rates, notes, taxes, discounts, totals, and payment terms.</p></article>
-<article class="seo-card"><h3>Customers and saved items</h3><p>Keep customer information organized and reuse common services, products, descriptions, and pricing.</p></article>
-<article class="seo-card"><h3>Job photos and payment tracking</h3><p>Add useful visual context and keep invoice payment status connected to the correct customer record.</p></article>
-</div>
-</section>
-<section class="seo-section invoice-report-section" aria-labelledby="invoice-reports-title"><div class="seo-section-header"><span class="seo-kicker">Know your numbers</span><h2 id="invoice-reports-title">See the bigger picture behind each invoice</h2><p>Review revenue and expenses over time, then look closer at profit, payments, and balances that still need attention.</p></div><div class="invoice-feature-previews"><figure class="invoice-shot"><a href="images/screenshots/gallery3.png" aria-label="View business reports screenshot at full size"><img src="images/screenshots/gallery3.png" alt="WP Labs: Invoice — business reports: Follow revenue and expenses over time." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Business reports</strong><span>Follow revenue and expenses over time.</span></figcaption></figure><figure class="invoice-shot"><a href="images/screenshots/gallery4.png" aria-label="View detailed performance screenshot at full size"><img src="images/screenshots/gallery4.png" alt="WP Labs: Invoice — detailed performance: Review profit, payments, and unpaid balances." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Detailed performance</strong><span>Review profit, payments, and unpaid balances.</span></figcaption></figure><figure class="invoice-shot"><a href="images/screenshots/gallery7.png" aria-label="View customer details screenshot at full size"><img src="images/screenshots/gallery7.png" alt="WP Labs: Invoice — customer details: Keep contacts and business details together." width="853" height="1844" loading="lazy" decoding="async"/></a><figcaption><strong>Customer details</strong><span>Keep contacts and business details together.</span></figcaption></figure></div></section>
-<section class="seo-section">
-<div class="seo-section-header"><span class="seo-kicker">Frequently asked questions</span><h2>WP Labs: Invoice questions</h2></div>
-<div class="seo-faq">
-<details><summary>Can contractors create estimates before invoicing?</summary><p>Yes. WP Labs: Invoice supports estimate workflows before the final invoice so labor, materials, notes, and customer details can stay organized from quote to payment.</p></details>
-<details><summary>Can freelancers customize invoices and save repeat services?</summary><p>Yes. Business branding and saved items help freelancers create consistent documents without retyping the same services, rates, products, and descriptions.</p></details>
-<details><summary>Can job photos be connected to invoices and estimates?</summary><p>WP Labs: Invoice is designed to keep job photos and supporting context connected to relevant customer documents.</p></details>
-<details><summary>What is the difference between an estimate and an invoice?</summary><p>An estimate communicates expected work and pricing before the final amount is due. An invoice requests payment for completed work or an agreed billing milestone. Read the <a href="blog/invoice-vs-estimate.html">invoice versus estimate guide</a> for more detail.</p></details>
-<details><summary>Where can I download WP Labs: Invoice?</summary><p>WP Labs: Invoice is available for iPhone on the App Store. Use the download link on this page to view the current app listing.</p></details>
-</div>
-</section>
-<section class="seo-cta"><div><h2>A simpler way to manage estimates and invoices</h2><p>Create estimates and invoices, organize customers, and keep your job records together on iPhone.</p></div><a class="button" href="https://apps.apple.com/us/app/wp-labs-invoice/id6797280708">View on the App Store</a></section>
-</main><footer class="friendly-footer"><div><a class="friendly-brand" href="index.html" aria-label="Wolfpack Labs home"><img class="site-wolf-mark" src="images/wolfpack-labs-mark-192.png?v=20261020-brand3" width="48" height="48" alt="" decoding="async"><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a><p>Useful information. A little more confidence.</p></div><nav aria-label="Invoice footer navigation"><a href="invoice-app/index.html">Invoice policies</a><a href="invoice-app/privacy-policy.html">Invoice privacy</a><a href="invoice-app/terms.html">Invoice terms</a><a href="invoice-app/disclosures.html">App disclosures</a><a href="invoice-app/data-request-deletion.html">Data &amp; deletion</a><a href="invoice-app/customer-privacy-notice.html">Customer privacy</a><a href="invoice-app/payment-disclosure.html">Payments</a><a href="legal/index.html">All policies</a><a href="legal/privacy-policy.html">Website privacy</a></nav><p class="copyright">© 2026 Wolfpack Labs LLC</p></footer></div>
-<script defer="" src="scripts/mobile-nav.js?v=20261004-mobile-menu"></script></body>
+      @media (max-width: 390px) {
+        .audience-jump-nav {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <link href="styles/logo.css?v=20260802-white-120" rel="stylesheet" />
+    <link href="styles/warm.css?v=20261004-mobile-menu" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico?v=20261020-brand3" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/icons/favicon-32.png?v=20261020-brand3"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/icons/favicon-192.png?v=20261020-brand3"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/icons/apple-touch-icon.png?v=20261020-brand3"
+    />
+    <link rel="manifest" href="site.webmanifest?v=20261020-brand3" />
+    <link rel="stylesheet" href="styles/site-branding.css?v=20261020-brand3" />
+    <link rel="stylesheet" href="styles/site-system.css?v=20261021-type5" />
+    <link rel="stylesheet" href="styles/pages/invoice-screenshots.css?v=20261101-gallery2" />
+  </head>
+  <body class="wp-labs-invoice-page has-site-shell">
+    <div class="shell site-shell">
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <header class="topbar">
+        <a aria-label="Wolfpack Labs home" class="friendly-brand" href="index.html"
+          ><img
+            class="site-wolf-mark"
+            src="images/wolfpack-labs-mark-192.png?v=20261020-brand3"
+            width="48"
+            height="48"
+            alt=""
+            decoding="async"
+          /><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a
+        >
+        <div class="nav-accordion">
+          <button
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+            aria-label="Open primary navigation"
+            class="nav-toggle"
+            hidden=""
+            type="button"
+          >
+            <span>Menu</span><span aria-hidden="true" data-menu-icon="">☰</span>
+          </button>
+          <nav aria-label="Primary navigation" class="nav" id="primary-navigation">
+            <a href="apps.html" aria-current="true">Apps</a><a href="tools.html">Tools</a
+            ><a href="resources.html">Resources</a><a href="blog.html">Blog</a>
+          </nav>
+        </div>
+      </header>
+      <main class="site-content" id="main-content">
+        <section class="seo-hero">
+          <div>
+            <span class="seo-kicker">Mobile invoicing for independent work</span>
+            <h1>One simple invoice app for contractors and freelancers</h1>
+            <p class="seo-lead">
+              WP Labs: Invoice brings estimates, invoices, customers, payments, and job
+              documentation into one focused mobile workflow for contractors, freelancers,
+              consultants, and other self-employed professionals.
+            </p>
+            <div class="seo-actions">
+              <a class="button" href="https://apps.apple.com/us/app/wp-labs-invoice/id6797280708"
+                >View on the App Store</a
+              ><a class="seo-button-secondary" href="#who-it-helps">See who it helps</a
+              ><a class="seo-button-secondary" href="invoice-app/index.html"
+                >Policies &amp; privacy</a
+              >
+            </div>
+          </div>
+          <div class="seo-visual">
+            <figure class="wp-labs-invoice-screen-card wp-labs-invoice-screen-card-featured">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery1.png"
+                aria-label="View business dashboard screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery1.png"
+                  alt="WP Labs: Invoice — business dashboard: Revenue, balances, and quick actions at a glance."
+                  width="1024"
+                  height="1536"
+                  fetchpriority="high"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business dashboard</strong
+                ><span>Revenue, balances, and quick actions at a glance.</span>
+              </figcaption>
+            </figure>
+            <div class="seo-proof-strip">
+              <span>Estimates</span><span>Invoices</span><span>Payments</span>
+            </div>
+          </div>
+        </section>
+        <section class="seo-section" id="features">
+          <div class="seo-section-header">
+            <span class="seo-kicker">Everything connected</span>
+            <h2>Move from customer request to paid invoice</h2>
+            <p>
+              Keep the information behind the work connected instead of rebuilding it across notes,
+              messages, spreadsheets, and separate finance tools.
+            </p>
+          </div>
+          <div class="seo-steps">
+            <article class="seo-step">
+              <h3>Add the customer</h3>
+              <p>
+                Save the contact and business details needed for estimates, invoices, and follow-up.
+              </p>
+            </article>
+            <article class="seo-step">
+              <h3>Prepare the estimate</h3>
+              <p>List services, labor, materials, quantities, rates, notes, and expected totals.</p>
+            </article>
+            <article class="seo-step">
+              <h3>Document the work</h3>
+              <p>Keep job photos and useful context connected to the customer and document.</p>
+            </article>
+            <article class="seo-step">
+              <h3>Send and track</h3>
+              <p>
+                Review the final invoice, share it with the customer, and follow payment status.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="seo-section wp-labs-invoice-preview-section" id="app-preview">
+          <div class="seo-section-header">
+            <span class="seo-kicker">App preview</span>
+            <h2>Take a closer look at WP Labs: Invoice</h2>
+            <p>
+              Explore all seven previews: your dashboard, invoices, customers, reports, detailed
+              performance, business tools, and sign-in. Scroll through or select an image for the
+              full-size view.
+            </p>
+          </div>
+          <div
+            aria-label="All seven WP Labs: Invoice app screenshots"
+            class="wp-labs-invoice-screen-row"
+            tabindex="0"
+            role="region"
+          >
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery1.png"
+                aria-label="View business dashboard screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery1.png"
+                  alt="WP Labs: Invoice — business dashboard: Revenue, balances, and quick actions at a glance."
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business dashboard</strong
+                ><span>Revenue, balances, and quick actions at a glance.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery6.png"
+                aria-label="View invoice tracking screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery6.png"
+                  alt="WP Labs: Invoice — invoice tracking: Keep paid, pending, and overdue invoices organized."
+                  width="981"
+                  height="1604"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Invoice tracking</strong
+                ><span>Keep paid, pending, and overdue invoices organized.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery3.png"
+                aria-label="View customer details screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery3.png"
+                  alt="WP Labs: Invoice — customer details: Keep contacts and business details together."
+                  width="853"
+                  height="1844"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Customer details</strong
+                ><span>Keep contacts and business details together.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery7.png"
+                aria-label="View business reports screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery7.png"
+                  alt="WP Labs: Invoice — business reports: Follow revenue and expenses over time."
+                  width="936"
+                  height="1681"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business reports</strong><span>Follow revenue and expenses over time.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery4.png"
+                aria-label="View detailed performance screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery4.png"
+                  alt="WP Labs: Invoice — detailed performance: Review profit, payments, and unpaid balances."
+                  width="941"
+                  height="1670"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Detailed performance</strong
+                ><span>Review profit, payments, and unpaid balances.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery5.png"
+                aria-label="View business tools screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery5.png"
+                  alt="WP Labs: Invoice — business tools: Find estimates, saved services, and recurring invoices."
+                  width="942"
+                  height="1670"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business tools</strong
+                ><span>Find estimates, saved services, and recurring invoices.</span>
+              </figcaption>
+            </figure>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery2.png"
+                aria-label="View sign in screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery2.png"
+                  alt="WP Labs: Invoice — sign in: Access your workspace with email, Google, or Apple."
+                  width="941"
+                  height="1672"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Sign in</strong
+                ><span>Access your workspace with email, Google, or Apple.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="seo-section" id="who-it-helps">
+          <div class="seo-section-header">
+            <span class="seo-kicker">Built for independent professionals</span>
+            <h2>One product page, two common ways of working</h2>
+            <p>
+              Contractors and freelancers may deliver different services, but both need a clear path
+              from scope and customer details to a professional invoice.
+            </p>
+          </div>
+          <div class="seo-grid-2">
+            <article class="seo-card" id="contractors">
+              <div class="seo-icon">🛠️</div>
+              <h3>For contractors and field services</h3>
+              <p>
+                Useful for handymen, painters, installers, cleaners, landscapers, mobile service
+                providers, and owner-operators who quote jobs and bill customers directly.
+              </p>
+              <ul class="seo-list">
+                <li>Create estimates with labor and materials.</li>
+                <li>Attach job photos and supporting notes.</li>
+                <li>Keep each customer, job, and invoice connected.</li>
+                <li>Track payment status after the work is complete.</li>
+              </ul>
+              <a href="#contractor-workflow">See the contractor workflow</a>
+            </article>
+            <article class="seo-card" id="freelancers">
+              <div class="seo-icon">💼</div>
+              <h3>For freelancers and consultants</h3>
+              <p>
+                Useful for designers, photographers, writers, consultants, specialists, and solo
+                service businesses that bill by project, milestone, service, or retainer.
+              </p>
+              <ul class="seo-list">
+                <li>Create branded client estimates and invoices.</li>
+                <li>Save repeat services, items, and descriptions.</li>
+                <li>Review client contact details before sending.</li>
+                <li>Organize payment status by customer document.</li>
+              </ul>
+              <a href="#freelancer-workflow">See the freelancer workflow</a>
+            </article>
+          </div>
+        </section>
+        <section class="seo-section" id="contractor-workflow">
+          <div class="seo-split">
+            <div class="seo-copy">
+              <span class="seo-kicker">Contractor workflow</span>
+              <h2>Useful wherever the job happens</h2>
+              <p>
+                Field-service work often starts with a site visit or customer request, not an
+                invoice. WP Labs: Invoice keeps the estimate, job documentation, customer
+                information, and final bill in the same workflow.
+              </p>
+              <ul class="seo-list">
+                <li>Build a professional estimate before beginning work.</li>
+                <li>Reuse common labor, materials, and service items.</li>
+                <li>Add photos that explain scope or completed work.</li>
+                <li>Create the final invoice without recreating customer details.</li>
+                <li>Keep payment status tied to the correct job document.</li>
+              </ul>
+            </div>
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery6.png"
+                aria-label="View invoice tracking screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery6.png"
+                  alt="WP Labs: Invoice — invoice tracking: Keep paid, pending, and overdue invoices organized."
+                  width="981"
+                  height="1604"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Invoice tracking</strong
+                ><span>Keep paid, pending, and overdue invoices organized.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="seo-section" id="freelancer-workflow">
+          <div class="seo-split">
+            <figure class="wp-labs-invoice-screen-card">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery5.png"
+                aria-label="View business tools screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery5.png"
+                  alt="WP Labs: Invoice — business tools: Find estimates, saved services, and recurring invoices."
+                  width="942"
+                  height="1670"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business tools</strong
+                ><span>Find estimates, saved services, and recurring invoices.</span>
+              </figcaption>
+            </figure>
+            <div class="seo-copy">
+              <span class="seo-kicker">Freelancer workflow</span>
+              <h2>Professional client billing without extra complexity</h2>
+              <p>
+                Freelancers need clear documents that communicate scope, pricing, and payment
+                expectations. WP Labs: Invoice is designed to keep that client-facing workflow
+                polished and easy to review.
+              </p>
+              <ul class="seo-list">
+                <li>Present services, deliverables, milestones, rates, and totals.</li>
+                <li>Use business branding across customer-facing documents.</li>
+                <li>Save repeat work instead of retyping common services.</li>
+                <li>Preview customer details before sending an estimate or invoice.</li>
+                <li>Track outstanding and paid documents in one place.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="seo-section">
+          <div class="seo-section-header">
+            <span class="seo-kicker">Core tools</span>
+            <h2>Designed around everyday billing tasks</h2>
+          </div>
+          <div class="seo-grid-3">
+            <article class="seo-card">
+              <h3>Estimates and invoices</h3>
+              <p>
+                Create customer-ready documents with line items, quantities, rates, notes, taxes,
+                discounts, totals, and payment terms.
+              </p>
+            </article>
+            <article class="seo-card">
+              <h3>Customers and saved items</h3>
+              <p>
+                Keep customer information organized and reuse common services, products,
+                descriptions, and pricing.
+              </p>
+            </article>
+            <article class="seo-card">
+              <h3>Job photos and payment tracking</h3>
+              <p>
+                Add useful visual context and keep invoice payment status connected to the correct
+                customer record.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="seo-section invoice-report-section" aria-labelledby="invoice-reports-title">
+          <div class="seo-section-header">
+            <span class="seo-kicker">Know your numbers</span>
+            <h2 id="invoice-reports-title">See the bigger picture behind each invoice</h2>
+            <p>
+              Review revenue and expenses over time, then look closer at profit, payments, and
+              balances that still need attention.
+            </p>
+          </div>
+          <div class="invoice-feature-previews">
+            <figure class="invoice-shot">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery7.png"
+                aria-label="View business reports screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery7.png"
+                  alt="WP Labs: Invoice — business reports: Follow revenue and expenses over time."
+                  width="936"
+                  height="1681"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Business reports</strong><span>Follow revenue and expenses over time.</span>
+              </figcaption>
+            </figure>
+            <figure class="invoice-shot">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery4.png"
+                aria-label="View detailed performance screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery4.png"
+                  alt="WP Labs: Invoice — detailed performance: Review profit, payments, and unpaid balances."
+                  width="941"
+                  height="1670"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Detailed performance</strong
+                ><span>Review profit, payments, and unpaid balances.</span>
+              </figcaption>
+            </figure>
+            <figure class="invoice-shot">
+              <a
+                class="invoice-phone-frame"
+                href="images/screenshots/gallery3.png"
+                aria-label="View customer details screenshot at full size"
+                ><img
+                  class="invoice-phone-image"
+                  src="images/screenshots/gallery3.png"
+                  alt="WP Labs: Invoice — customer details: Keep contacts and business details together."
+                  width="853"
+                  height="1844"
+                  loading="lazy"
+                  decoding="async"
+              /></a>
+              <figcaption>
+                <strong>Customer details</strong
+                ><span>Keep contacts and business details together.</span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="seo-section">
+          <div class="seo-section-header">
+            <span class="seo-kicker">Frequently asked questions</span>
+            <h2>WP Labs: Invoice questions</h2>
+          </div>
+          <div class="seo-faq">
+            <details>
+              <summary>Can contractors create estimates before invoicing?</summary>
+              <p>
+                Yes. WP Labs: Invoice supports estimate workflows before the final invoice so labor,
+                materials, notes, and customer details can stay organized from quote to payment.
+              </p>
+            </details>
+            <details>
+              <summary>Can freelancers customize invoices and save repeat services?</summary>
+              <p>
+                Yes. Business branding and saved items help freelancers create consistent documents
+                without retyping the same services, rates, products, and descriptions.
+              </p>
+            </details>
+            <details>
+              <summary>Can job photos be connected to invoices and estimates?</summary>
+              <p>
+                WP Labs: Invoice is designed to keep job photos and supporting context connected to
+                relevant customer documents.
+              </p>
+            </details>
+            <details>
+              <summary>What is the difference between an estimate and an invoice?</summary>
+              <p>
+                An estimate communicates expected work and pricing before the final amount is due.
+                An invoice requests payment for completed work or an agreed billing milestone. Read
+                the <a href="blog/invoice-vs-estimate.html">invoice versus estimate guide</a> for
+                more detail.
+              </p>
+            </details>
+            <details>
+              <summary>Where can I download WP Labs: Invoice?</summary>
+              <p>
+                WP Labs: Invoice is available for iPhone on the App Store. Use the download link on
+                this page to view the current app listing.
+              </p>
+            </details>
+          </div>
+        </section>
+        <section class="seo-cta">
+          <div>
+            <h2>A simpler way to manage estimates and invoices</h2>
+            <p>
+              Create estimates and invoices, organize customers, and keep your job records together
+              on iPhone.
+            </p>
+          </div>
+          <a class="button" href="https://apps.apple.com/us/app/wp-labs-invoice/id6797280708"
+            >View on the App Store</a
+          >
+        </section>
+      </main>
+      <footer class="friendly-footer">
+        <div>
+          <a class="friendly-brand" href="index.html" aria-label="Wolfpack Labs home"
+            ><img
+              class="site-wolf-mark"
+              src="images/wolfpack-labs-mark-192.png?v=20261020-brand3"
+              width="48"
+              height="48"
+              alt=""
+              decoding="async"
+            /><span class="site-brand-name">Wolfpack <strong>Labs</strong></span></a
+          >
+          <p>Useful information. A little more confidence.</p>
+        </div>
+        <nav aria-label="Invoice footer navigation">
+          <a href="invoice-app/index.html">Invoice policies</a
+          ><a href="invoice-app/privacy-policy.html">Invoice privacy</a
+          ><a href="invoice-app/terms.html">Invoice terms</a
+          ><a href="invoice-app/disclosures.html">App disclosures</a
+          ><a href="invoice-app/data-request-deletion.html">Data &amp; deletion</a
+          ><a href="invoice-app/customer-privacy-notice.html">Customer privacy</a
+          ><a href="invoice-app/payment-disclosure.html">Payments</a
+          ><a href="legal/index.html">All policies</a
+          ><a href="legal/privacy-policy.html">Website privacy</a>
+        </nav>
+        <p class="copyright">© 2026 Wolfpack Labs LLC</p>
+      </footer>
+    </div>
+    <script defer="" src="scripts/mobile-nav.js?v=20261004-mobile-menu"></script>
+  </body>
 </html>
