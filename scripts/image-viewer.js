@@ -5,11 +5,10 @@
   const viewer = document.createElement('dialog');
   if (typeof viewer.showModal !== 'function') return;
   viewer.className = 'image-viewer';
-  viewer.setAttribute('aria-labelledby', 'image-viewer-title');
+  viewer.setAttribute('aria-label', 'Image viewer');
   viewer.innerHTML = `
     <div class="image-viewer-toolbar">
-      <h2 class="image-viewer-title" id="image-viewer-title">Image preview</h2>
-      <button class="image-viewer-close" type="button" aria-label="Close image preview" autofocus>×</button>
+      <button class="image-viewer-close" type="button" aria-label="Close image viewer" autofocus>×</button>
     </div>
     <div class="image-viewer-stage">
       <button class="image-viewer-previous" type="button" aria-label="Previous image">‹</button>
@@ -43,7 +42,7 @@
     return img.currentSrc || img.src;
   }
   function label(img) {
-    return img.alt.trim() || img.closest('figure')?.querySelector('figcaption')?.textContent.trim() || img.closest('a')?.getAttribute('aria-label') || 'Image preview';
+    return img.alt.trim() || img.closest('figure')?.querySelector('figcaption')?.textContent.trim() || img.closest('a')?.getAttribute('aria-label') || 'Image';
   }
   function render() {
     const entry = entries[index];
