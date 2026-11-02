@@ -1,7 +1,38 @@
 /* Approved publisher and app identities, loaded after each page’s own theme. */
+@font-face {
+  font-family: 'Wolfpack Wordmark';
+  src: url('../fonts/fraunces-semibold-italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
 .site-shell .friendly-brand,.site-shell .publisher-brand{display:inline-flex;align-items:center;gap:10px;min-width:0;text-decoration:none}
 .site-shell .friendly-brand .site-wolf-mark,.site-shell .publisher-brand .site-wolf-mark{display:block;width:46px;height:46px;flex:0 0 46px;object-fit:contain;background:transparent;border:0;border-radius:0;box-shadow:none;margin:0}
-.site-brand-name{display:block;white-space:nowrap;min-width:0}
+.site-brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .26em;
+  min-width: 0;
+  white-space: nowrap;
+  font-family: 'Wolfpack Wordmark', Georgia, 'Times New Roman', serif;
+  font-size: 1.08em;
+  font-style: italic;
+  font-weight: 600;
+  font-synthesis: none;
+  line-height: 1.2;
+  letter-spacing: -.045em;
+}
+html[data-site-theme] body .site-brand-name strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: max(.44em, .5625rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+  color: var(--accent, #a64e35);
+}
+.publisher-credit .site-brand-name { font-size: 1.2em; }
 .site-shell>.friendly-footer .friendly-brand .site-wolf-mark{width:34px;height:34px;flex-basis:34px}
 .publisher-credit{display:inline-flex;align-items:center;gap:5px;color:inherit;text-decoration:none;vertical-align:middle;white-space:nowrap}
 .publisher-credit .site-wolf-mark{width:24px;height:24px;display:inline-block;vertical-align:middle;object-fit:contain}
