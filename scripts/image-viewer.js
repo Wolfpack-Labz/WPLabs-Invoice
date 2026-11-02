@@ -34,7 +34,9 @@
   let wasScrollLocked = false;
 
   const gallerySelector = '.invoice-feature-previews, .invoice-screen-gallery, .wp-labs-invoice-screen-row, [data-image-gallery]';
-  const isVisible = img => !viewer.contains(img) && img.getClientRects().length > 0 && getComputedStyle(img).visibility !== 'hidden';
+  // Publisher logos keep their normal home links and never enter the gallery.
+  const canPreview = img => !img.matches('.site-wolf-mark') && !viewer.contains(img);
+  const isVisible = img => canPreview(img) && img.getClientRects().length > 0 && getComputedStyle(img).visibility !== 'hidden';
   function source(img) {
     const link = img.closest('a[href]');
     // Screenshot links may point at a larger original than the displayed image.
@@ -121,7 +123,7 @@
     return link && !link.textContent.trim() && link.querySelectorAll('img').length === 1;
   }
   function prepare(img) {
-    if (viewer.contains(img) || img.classList.contains('image-viewer-trigger')) return;
+    if (!canPreview(img) || img.classList.contains('image-viewer-trigger')) return;
     img.classList.add('image-viewer-trigger');
     const link = img.closest('a');
     if (imageOnlyLink(link)) {
