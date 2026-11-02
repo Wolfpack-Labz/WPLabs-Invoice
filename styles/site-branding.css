@@ -1,11 +1,4 @@
 /* Approved publisher and app identities, loaded after each page’s own theme. */
-@font-face {
-  font-family: 'Wolfpack Wordmark';
-  src: url('../fonts/fraunces-semibold-italic.ttf') format('truetype');
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-}
 .site-shell .friendly-brand,.site-shell .publisher-brand{display:inline-flex;align-items:center;gap:10px;min-width:0;text-decoration:none}
 .site-shell .friendly-brand .site-wolf-mark,.site-shell .publisher-brand .site-wolf-mark{display:block;width:46px;height:46px;flex:0 0 46px;object-fit:contain;background:transparent;border:0;border-radius:0;box-shadow:none;margin:0}
 .site-brand-name {
@@ -16,11 +9,11 @@
   white-space: nowrap;
   font-family: 'Wolfpack Wordmark', Georgia, 'Times New Roman', serif;
   font-size: 1.08em;
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 400;
   font-synthesis: none;
   line-height: 1.2;
-  letter-spacing: -.045em;
+  letter-spacing: -.025em;
 }
 html[data-site-theme] body .site-brand-name strong {
   font-family: Arial, Helvetica, sans-serif;
@@ -42,3 +35,26 @@ html[data-site-theme] body .site-brand-name strong {
 .invoice-brand-line-small .invoice-site-icon{width:36px;height:36px;flex-basis:36px;border-radius:9px}
 @media(max-width:640px){.site-shell>.topbar .friendly-brand,.site-shell>.topbar .publisher-brand{font-size:1.15rem;gap:8px}.site-shell>.topbar .friendly-brand .site-wolf-mark,.site-shell>.topbar .publisher-brand .site-wolf-mark{width:34px;height:34px;flex-basis:34px}.site-shell>.friendly-footer .friendly-brand{font-size:1.25rem}.site-shell>.friendly-footer .friendly-brand .site-wolf-mark{width:30px;height:30px;flex-basis:30px}.invoice-brand-line{gap:10px}}
 @media print{.invoice-brand-line{break-inside:avoid}}
+
+/* Custom artwork replaces the publisher icon-and-font lockup. */
+html[data-site-theme] body img.site-custom-logo {
+  display: block;
+  flex: 0 1 auto;
+  width: 228px;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+html[data-site-theme] body :is(.friendly-footer, .wh-footer) img.site-custom-logo { width: 192px; }
+html[data-site-theme] body .publisher-credit img.site-custom-logo { width: 132px; }
+@media (max-width: 640px) {
+  html[data-site-theme] body .topbar img.site-custom-logo { width: 174px; }
+  html[data-site-theme] body .friendly-footer img.site-custom-logo { width: 174px; }
+}
