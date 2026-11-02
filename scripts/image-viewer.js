@@ -35,7 +35,7 @@
 
   const gallerySelector = '.invoice-feature-previews, .invoice-screen-gallery, .wp-labs-invoice-screen-row, [data-image-gallery]';
   // Publisher logos keep their normal home links and never enter the gallery.
-  const canPreview = img => !img.matches('.site-wolf-mark') && !viewer.contains(img);
+  const canPreview = img => !img.matches('.site-wolf-mark, .site-custom-logo') && !viewer.contains(img);
   const isVisible = img => canPreview(img) && img.getClientRects().length > 0 && getComputedStyle(img).visibility !== 'hidden';
   function source(img) {
     const link = img.closest('a[href]');
