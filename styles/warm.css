@@ -36,3 +36,16 @@ body.has-site-shell .site-content.policy-card{padding:clamp(22px,4vw,44px)}
 .site-shell .nav-accordion>.nav[hidden],.site-shell .nav-toggle[hidden]{display:none!important}
 @media(max-width:860px){body.has-site-shell .site-shell>.topbar{flex-direction:row;align-items:center;flex-wrap:nowrap;gap:12px}.site-shell .nav-toggle{display:flex}.site-shell .nav-accordion>.nav:not([hidden]){display:flex!important;max-width:calc(100vw - 36px)}.site-shell .nav-accordion[data-menu-open=true]>.nav{visibility:visible}.site-shell .nav-accordion:not([data-menu-ready])>.nav{position:static;width:auto;box-shadow:none;border:0;padding:0}.site-shell .nav-accordion:not([data-menu-ready]){flex:1 1 auto}.site-shell .nav-accordion:not([data-menu-ready])>.nav a{padding:5px 10px}}
 @media(min-width:861px){.site-shell .nav-accordion>.nav{display:flex!important;position:static;visibility:visible}}
+
+/* Home app call to action: high contrast against the sage app band. */
+.app-band > .invoice-meet-button {
+  background: #254f46 !important;
+  color: #ffffff !important;
+  border-color: #254f46;
+}
+.app-band > .invoice-meet-button:hover,
+.app-band > .invoice-meet-button:active {
+  background: #193b34 !important;
+  color: #ffffff !important;
+  border-color: #193b34;
+}
