@@ -40,7 +40,7 @@ html[data-site-theme] body .site-brand-name strong {
 html[data-site-theme] body img.site-custom-logo {
   display: block;
   flex: 0 1 auto;
-  width: 228px;
+  width: clamp(162px, 22vw, 228px);
   height: auto;
   max-width: 100%;
   aspect-ratio: 3 / 1;
@@ -52,9 +52,9 @@ html[data-site-theme] body img.site-custom-logo {
   background: transparent;
   box-shadow: none;
 }
-html[data-site-theme] body :is(.friendly-footer, .wh-footer) img.site-custom-logo { width: 192px; }
+html[data-site-theme] body :is(.friendly-footer, .wh-footer) img.site-custom-logo { width: clamp(162px, 22vw, 192px); }
 html[data-site-theme] body .publisher-credit img.site-custom-logo { width: 132px; }
 @media (max-width: 640px) {
-  html[data-site-theme] body .topbar img.site-custom-logo { width: 174px; }
-  html[data-site-theme] body .friendly-footer img.site-custom-logo { width: 174px; }
+  html[data-site-theme] body .topbar img.site-custom-logo { width: 162px; }
+  html[data-site-theme] body .friendly-footer img.site-custom-logo { width: 162px; }
 }
