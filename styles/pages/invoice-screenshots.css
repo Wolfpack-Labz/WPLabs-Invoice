@@ -67,7 +67,21 @@
 .wp-labs-invoice-page .seo-proof-strip { max-width: 260px; }
 .wp-labs-invoice-screen-row { scroll-snap-type: x proximity; }
 @media (max-width: 700px) {
-  .invoice-feature-previews { grid-template-columns: 1fr; max-width: 310px; gap: 24px; }
+  .invoice-feature-previews {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    max-width: none;
+    padding: 8px 4px 20px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: #7892a8 transparent;
+  }
+  .invoice-feature-previews > .invoice-shot {
+    flex: 0 0 min(76vw, 260px);
+    scroll-snap-align: start;
+  }
   .invoice-screen-gallery > .invoice-shot { flex-basis: min(76vw, 280px); }
   .wp-labs-invoice-screen-card { flex-basis: 210px; width: 210px; min-width: 210px; max-width: 210px; }
   .wp-labs-invoice-screen-card figcaption span { display: block; }
