@@ -35,7 +35,10 @@
 
   const gallerySelector = '.invoice-feature-previews, .invoice-screen-gallery, .wp-labs-invoice-screen-row, [data-image-gallery]';
   // Publisher logos keep their normal home links and never enter the gallery.
-  const canPreview = img => !img.matches('.site-wolf-mark, .site-custom-logo') && !viewer.contains(img);
+  const canPreview = img => !img.matches('.site-wolf-mark, .site-custom-logo') &&
+    !img.closest('[data-no-image-viewer], a.friendly-brand, a.publisher-brand, a.publisher-credit') &&
+    !/wolfpack-labs-(?:custom-logo|mark)(?:-\d+)?\.(?:png|svg|webp)(?:[?#]|$)/i.test(img.currentSrc || img.src) &&
+    !viewer.contains(img);
   const isVisible = img => canPreview(img) && img.getClientRects().length > 0 && getComputedStyle(img).visibility !== 'hidden';
   function source(img) {
     const link = img.closest('a[href]');
