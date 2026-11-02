@@ -73,3 +73,74 @@
   .wp-labs-invoice-screen-card figcaption span { display: block; }
   .wp-labs-invoice-page .seo-proof-strip { max-width: 210px; }
 }
+
+/* Match gallery cards on both pages, regardless of the source image ratio. */
+.invoice-screen-gallery,
+.wp-labs-invoice-screen-row {
+  --invoice-gallery-width: clamp(220px, 25vw, 260px);
+  align-items: stretch;
+}
+.invoice-screen-gallery > .invoice-shot,
+.wp-labs-invoice-screen-row > .wp-labs-invoice-screen-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 var(--invoice-gallery-width);
+  align-self: stretch;
+  width: var(--invoice-gallery-width);
+  min-width: 0;
+  max-width: none;
+  height: auto;
+}
+.invoice-screen-gallery > .invoice-shot > a,
+.wp-labs-invoice-screen-row > .wp-labs-invoice-screen-card > a {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  position: relative;
+  overflow: hidden;
+  background: #f5f8fc;
+}
+.invoice-screen-gallery .invoice-phone-image,
+.wp-labs-invoice-screen-row .invoice-phone-image {
+  /* Account for transparent padding so the phones also share a visible height. */
+  position: absolute;
+  left: 50%;
+  top: calc(16px - (100% - 32px) * var(--invoice-image-top, 0));
+  transform: translateX(-50%);
+  width: auto;
+  max-width: none;
+  height: calc((100% - 32px) * var(--invoice-image-scale, 1));
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+.invoice-screen-gallery > .invoice-shot > figcaption,
+.wp-labs-invoice-screen-row > .wp-labs-invoice-screen-card > figcaption {
+  flex: 1;
+  align-content: start;
+  gap: 5px;
+  min-height: 104px;
+  padding: 15px 17px;
+  box-sizing: border-box;
+}
+.invoice-screen-gallery figcaption strong,
+.wp-labs-invoice-screen-row figcaption strong {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+.invoice-screen-gallery figcaption span,
+.wp-labs-invoice-screen-row figcaption span {
+  display: block;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+@media (max-width: 700px) {
+  .invoice-screen-gallery,
+  .wp-labs-invoice-screen-row {
+    --invoice-gallery-width: min(76vw, 260px);
+  }
+}
