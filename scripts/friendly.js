@@ -31,11 +31,11 @@
       clearInterval(timer);
       if (!paused && !hovering && !focused && visible && !document.hidden && slides.length > 1) timer = setInterval(() => go(index + 1), 6000);
     };
-    function go(next) {
+    function go(next, behavior = motion.matches ? 'auto' : 'smooth') {
       index = (next + lastStart() + 1) % (lastStart() + 1);
       // offsetLeft can reference a different ancestor; bounding rectangles share coordinates.
       const left = track.scrollLeft + slides[index].getBoundingClientRect().left - track.getBoundingClientRect().left;
-      track.scrollTo({left, behavior: motion.matches ? 'auto' : 'smooth'});
+      track.scrollTo({left, behavior});
       updateControls();
     }
     carousel.querySelector('[data-carousel="previous"]').addEventListener('click', () => go(index - 1));
@@ -60,7 +60,24 @@
         updateControls();
       }, 180);
     }, {passive:true});
-    addEventListener('resize', () => { index = Math.min(index, lastStart()); go(index); updateTimer(); });
+    let resizeFrame = 0, trackWidth = track.clientWidth;
+    function reflowCarousel() {
+      resizeFrame = 0;
+      if (track.clientWidth === trackWidth) return;
+      trackWidth = track.clientWidth;
+      index = Math.min(index, lastStart());
+      // Align against the final container width; do not animate from the old
+      // portrait/landscape coordinates while the browser is changing layout.
+      go(index, 'auto');
+      updateTimer();
+    }
+    function queueCarouselReflow() {
+      if (!resizeFrame) resizeFrame = requestAnimationFrame(reflowCarousel);
+    }
+    addEventListener('resize', queueCarouselReflow, {passive: true});
+    addEventListener('orientationchange', queueCarouselReflow, {passive: true});
+    window.visualViewport?.addEventListener('resize', queueCarouselReflow, {passive: true});
+    if ('ResizeObserver' in window) new ResizeObserver(queueCarouselReflow).observe(track);
     document.addEventListener('visibilitychange', updateTimer);
     motion.addEventListener('change', () => { if (motion.matches) paused = true; updateControls(); updateTimer(); });
     if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; updateTimer(); }, {threshold: .15}).observe(track);
@@ -72,6 +89,8 @@
     const input = browser.querySelector('#blog-search');
     const cards = [...browser.querySelectorAll('.story-card')];
     const filters = [...browser.querySelectorAll('[data-filter]')];
+    const topic = browser.querySelector('#blog-topic');
+    const categories = new Set(topic ? [...topic.options].map(option => option.value) : filters.map(button => button.dataset.filter));
     const count = browser.querySelector('.search-count');
     const empty = browser.querySelector('.empty-state');
     const pagination = browser.querySelector('.blog-pagination');
@@ -102,6 +121,7 @@
       const visible = new Set(matches.slice(start, pagination ? start + pageSize : matches.length));
       cards.forEach(card => { card.hidden = !visible.has(card); });
       filters.forEach(button => button.setAttribute('aria-pressed', String(category === button.dataset.filter)));
+      if (topic) topic.value = category;
       const noun = matches.length === 1 ? 'article' : 'articles';
       count.textContent = matches.length ? `Showing ${start + 1}–${start + visible.size} of ${matches.length} ${noun}${input.value.trim() ? ' found' : ''}` : 'No articles found';
       empty.hidden = matches.length !== 0;
@@ -147,7 +167,7 @@
     function restoreUrl(scroll = false) {
       const params = new URLSearchParams(location.search);
       input.value = params.get('q') || '';
-      category = filters.some(f => f.dataset.filter === params.get('category')) ? params.get('category') : 'All articles';
+      category = categories.has(params.get('category')) ? params.get('category') : 'All articles';
       const requested = Number(params.get('page'));
       page = Number.isSafeInteger(requested) && requested > 0 ? requested : 1;
       render();
@@ -168,6 +188,7 @@
     input.addEventListener('input', filter);
     browser.querySelector('form').addEventListener('submit', event => { event.preventDefault(); filter(); });
     filters.forEach(button => button.addEventListener('click', () => { category = button.dataset.filter; filter(); }));
+    topic?.addEventListener('change', () => { category = topic.value; filter(); });
     browser.querySelector('.clear-search').addEventListener('click', () => { input.value = ''; filter(); input.focus(); });
     browser.querySelector('[data-search-reset]').addEventListener('click', () => { input.value = ''; category = 'All articles'; filter(); input.focus(); });
     addEventListener('popstate', () => restoreUrl(true));

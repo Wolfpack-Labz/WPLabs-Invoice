@@ -10,6 +10,8 @@
     if (!toggle || !navigation) return;
     const icon = toggle.querySelector('[data-menu-icon]');
     let isOpen = false;
+    let viewportWidth = document.documentElement.clientWidth;
+    let resizeFrame = 0;
 
     function setOpen(nextOpen) {
       isOpen = mobileQuery.matches && nextOpen;
@@ -48,10 +50,28 @@
       }, 0);
     });
 
-    function resetForViewport() { setOpen(false); }
+    function resetForViewport() {
+      viewportWidth = document.documentElement.clientWidth;
+      setOpen(false);
+    }
+    function syncViewportWidth() {
+      resizeFrame = 0;
+      const nextWidth = document.documentElement.clientWidth;
+      // Safari's browser bars and keyboard can resize height without changing
+      // the layout. Keep an open menu intact for those height-only changes.
+      if (nextWidth === viewportWidth) return;
+      resetForViewport();
+    }
+    function queueViewportSync() {
+      if (!resizeFrame) resizeFrame = requestAnimationFrame(syncViewportWidth);
+    }
     if (typeof mobileQuery.addEventListener === 'function') mobileQuery.addEventListener('change', resetForViewport);
     else mobileQuery.addListener(resetForViewport);
     window.addEventListener('pageshow', resetForViewport);
-    window.addEventListener('orientationchange', resetForViewport);
+    window.addEventListener('resize', queueViewportSync, {passive: true});
+    window.addEventListener('orientationchange', queueViewportSync, {passive: true});
+    window.visualViewport?.addEventListener('resize', queueViewportSync, {passive: true});
+    window.screen?.orientation?.addEventListener?.('change', queueViewportSync);
+    if ('ResizeObserver' in window) new ResizeObserver(queueViewportSync).observe(document.documentElement);
   });
 })();
