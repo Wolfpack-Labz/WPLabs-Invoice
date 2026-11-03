@@ -395,3 +395,47 @@ html[data-site-theme='invoice'] body .back-to-top:hover { background: var(--acce
   html[data-site-theme] :is(.topbar, .friendly-footer, .wh-footer) { display: none !important; }
   html[data-site-theme] body h1 { font: 400 28pt/1.2 var(--font-heading); }
 }
+
+/* Fluid containers must be allowed to shrink after rotation or split-view
+   resizing. Keep intentionally scrollable galleries inside their page width. */
+@media screen {
+  html[data-site-theme], html[data-site-theme] body { min-width: 0; }
+  html[data-site-theme] .site-shell,
+  html[data-site-theme] .site-shell > main,
+  html[data-site-theme] .site-shell section,
+  html[data-site-theme] :is(.home-hero, .hero, .seo-hero, .app-feature, .article-layout, .reading-layout) > * {
+    min-width: 0;
+  }
+  html[data-site-theme] .home-hero { grid-template-columns: minmax(0, 1.4fr) minmax(0, .85fr); }
+  html[data-site-theme] .hero { grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); }
+  html[data-site-theme] .app-feature { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
+  html[data-site-theme] :is(.carousel, .carousel-track, .invoice-feature-previews, .invoice-screen-gallery, .wp-labs-invoice-screen-row) {
+    min-width: 0;
+    max-width: 100%;
+  }
+  html[data-site-theme] :is(.article-body, .policy-content, .policy-card, .legal-document) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* iPad portrait widths need their own layout, above the phone breakpoint. */
+@media screen and (max-width: 960px) {
+  html[data-site-theme] :is(.home-hero, .hero, .seo-hero, .app-feature) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html[data-site-theme] .home-hero .start-card { transform: none; }
+  html[data-site-theme] .home-hero .start-card > * { transform: none; }
+  html[data-site-theme] .explore-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 0; }
+  html[data-site-theme] .explore-strip a:nth-child(2n) { border-right: 0; }
+  html[data-site-theme] .explore-strip a:nth-child(2n + 1) { padding-left: 0; }
+}
+
+/* CSS switches the navigation immediately, even before a deferred resize
+   callback has reconciled the previous viewport's hidden attribute. */
+@media screen and (min-width: 861px) {
+  html[data-site-theme] body .topbar .nav-accordion > .nav { display: flex !important; }
+}
+@media screen and (max-width: 860px) {
+  html[data-site-theme] body .topbar .nav-accordion[data-menu-open='false'] > .nav { display: none !important; }
+}
