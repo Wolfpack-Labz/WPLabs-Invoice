@@ -18,3 +18,12 @@
   .article-body .table-wrap { overflow: visible; border: 0; }
   .article-body .table-wrap table { min-width: 0; }
 }
+
+/* Readable copy-and-paste commands in intermediate troubleshooting guides. */
+.article-body pre { max-width:100%; overflow-x:auto; padding:16px 18px; margin:16px 0 24px; border:1px solid var(--border); border-radius:12px; background:var(--card-muted); color:var(--text); font: .9375rem/1.65 Consolas, 'Courier New', monospace; white-space:pre; }
+.article-body pre code { background:transparent; padding:0; border:0; font:inherit; white-space:inherit; overflow-wrap:normal; }
+.article-body p code, .article-body li code { padding:2px 5px; border-radius:5px; background:var(--card-muted); font:.9em Consolas,'Courier New',monospace; }
+.article-body blockquote { border-left:3px solid var(--teal); background:var(--card-muted); padding:16px 20px; margin:20px 0 28px; border-radius:0 12px 12px 0; }
+.article-body blockquote p { margin:0; }
+@media (max-width:600px) { .article-body pre { font-size:.875rem; padding:12px; } }
+@media print { .article-body pre { white-space:pre-wrap; overflow:visible; } }
