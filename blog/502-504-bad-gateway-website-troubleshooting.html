@@ -1,0 +1,130 @@
+---
+blog_post: true
+title: "Website Showing 502 or 504? How to Troubleshoot Gateway Errors"
+date: "2026-11-22T15:20:00-05:00"
+last_modified_at: "2026-11-22T15:20:00-05:00"
+category: "How-To"
+read_time: "6 min read"
+summary: "Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks."
+art_color: "gold"
+art_title: "Gateway error?<br>Trace upstream."
+field_note: "56"
+search_keywords: "502 bad gateway 504 gateway timeout nginx reverse proxy cloudflare upstream logs web application fix"
+---
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html data-site-theme="wolfpack" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Website Showing 502 or 504? How to Troubleshoot Gateway Errors | Wolfpack Labs</title>
+<meta content="Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks." name="description"/>
+<meta content="#fbf7ef" name="theme-color"/>
+<link href="https://wolfpack-labs.com/blog/502-504-bad-gateway-website-troubleshooting.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Website Showing 502 or 504? How to Troubleshoot Gateway Errors" property="og:title"/>
+<meta content="Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks." property="og:description"/>
+<meta content="https://wolfpack-labs.com/blog/502-504-bad-gateway-website-troubleshooting.html" property="og:url"/>
+<script defer="" src="../scripts/mobile-nav.js?v=20261102-responsive10"></script><script defer="" src="../scripts/friendly.js?v=20261102-responsive10"></script><link href="../styles/warm.css?v=20261007-original" rel="stylesheet"/>
+<meta content="2026-11-22T15:20:00-05:00" property="article:published_time"/>
+<meta content="2026-11-22T15:20:00-05:00" property="article:modified_time"/>
+<link href="../favicon.ico?v=20261020-brand3" rel="icon" sizes="any"/>
+<link href="../images/icons/favicon-32.png?v=20261020-brand3" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../images/icons/favicon-192.png?v=20261020-brand3" rel="icon" sizes="192x192" type="image/png"/>
+<link href="../images/icons/apple-touch-icon.png?v=20261020-brand3" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../site.webmanifest?v=20261020-brand3" rel="manifest"/>
+<meta content="https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3" property="og:image"/>
+<meta content="Wolfpack Labs wolf-head logo" property="og:image:alt"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3" name="twitter:image"/>
+<meta content="Wolfpack Labs wolf-head logo" name="twitter:image:alt"/>
+<meta content="summary" name="twitter:card"/>
+<link href="../styles/site-branding.css?v=20261102-logo-size7" rel="stylesheet"/>
+<link href="../styles/site-system.css?v=20261102-responsive10" rel="stylesheet"/>
+<meta content="Website Showing 502 or 504? How to Troubleshoot Gateway Errors" name="twitter:title"/>
+<meta content="Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks." name="twitter:description"/>
+<meta content="How-To" property="article:section"/>
+<meta content="Wolfpack Labs" property="og:site_name"/>
+<link href="../styles/pages/blog-articles.css?v=20261030-guides" rel="stylesheet"/>
+<link href="../styles/image-viewer.css?v=20261102-viewer2" rel="stylesheet"/><script defer="" src="../scripts/image-viewer.js?v=20261102-logo-size7"></script></head>
+<body class="friendly has-site-shell"><div class="shell site-shell">
+<a class="skip-link" href="#main-content">Skip to content</a><header class="topbar"><a aria-label="Wolfpack Labs home" class="friendly-brand" data-no-image-viewer="" href="../index.html" onclick="event.stopPropagation()"><img alt="Wolfpack Labs" class="site-custom-logo" decoding="async" height="76" src="../images/wolfpack-labs-custom-logo.png?v=original-logo-11" style="display:block;width:clamp(162px, 22vw, 228px);max-width:100%;height:auto;aspect-ratio:3/1;object-fit:contain;cursor:pointer" width="228"/></a><div class="nav-accordion">
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open primary navigation" class="nav-toggle" hidden="" type="button"><span>Menu</span><span aria-hidden="true" data-menu-icon="">☰</span></button><nav aria-label="Primary navigation" class="nav" id="primary-navigation"><a href="../apps.html">Apps</a><a href="../tools.html">Tools</a><a href="../resources.html">Resources</a><a aria-current="page" href="../blog.html">Blog</a></nav>
+</div></header><main class="site-content" id="main-content"><nav aria-label="Breadcrumb" class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / <a href="../blog.html?category=How-To">How-To</a></nav>
+<header class="article-header"><span class="eyebrow">How-To</span><h1>Website Showing 502 or 504? How to Troubleshoot Gateway Errors</h1>
+<p>Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks.</p>
+<div class="meta">By Wolfpack Labs · <time datetime="2026-11-22">November 22, 2026</time> · 6 min read</div></header>
+<div class="article-layout">
+<aside aria-label="In this guide" class="article-toc"><strong>In this guide</strong><a href="#quick-answer">Start here: what does the gateway error tell you?</a><a href="#step-1-capture-the-failure-before-changing-anything">Step 1: Capture the failure before changing anything</a><a href="#step-2-identify-the-component-that-returned-the-error">Step 2: Identify the component that returned the error</a><a href="#step-3-check-whether-the-upstream-application-is-running">Step 3: Check whether the upstream application is running</a><a href="#step-4-compare-reverse-proxy-and-application-logs">Step 4: Compare reverse-proxy and application logs</a><a href="#step-5-verify-upstream-addresses-ports-and-tls-settings">Step 5: Verify upstream addresses, ports, and TLS settings</a><a href="#step-6-look-for-slow-queries-overload-or-deployment-regressions">Step 6: Look for slow queries, overload, or deployment regressions</a><a href="#step-7-verify-recovery-end-to-end">Step 7: Verify recovery end to end</a><a href="#frequently-asked-questions">Frequently asked questions</a></aside><article class="article-body"><section id="quick-answer"><h2>Start here: what does the gateway error tell you?</h2><p>A <strong>502 Bad Gateway</strong> usually means a server acting as a gateway or proxy received an invalid response from an upstream service. A <strong>504 Gateway Timeout</strong> means that the gateway did not receive a timely response. Both may appear when a website is behind NGINX, a load balancer, a CDN, or another reverse proxy.</p>
+<blockquote>
+<p><strong>Quick answer:</strong> Capture the exact URL, response code, and timestamp; determine which layer generated the error; check upstream application health and gateway logs; then investigate connectivity, DNS, certificates, and timeouts one at a time.</p>
+</blockquote>
+<p>This guide is intended for people who administer their own site or have permission to inspect its infrastructure. If you are only visiting the site, you cannot repair its server; retry later or report the error to the owner.</p>
+</section><section id="step-1-capture-the-failure-before-changing-anything"><h2>Step 1: Capture the failure before changing anything</h2><p>Record the request URL, time with time zone, whether the failure is constant or intermittent, and any request ID shown on the error page. Be careful not to share private URLs, cookies, session tokens, or internal hostnames publicly.</p>
+<p>From a terminal, use <code>curl</code> to see only the response headers:</p>
+<pre><code class="language-bash">curl -I --max-time 15 https://example.com/
+</code></pre>
+<p>On Windows PowerShell, use <code>curl.exe</code> if <code>curl</code> is an alias. If the problem occurs only for a specific endpoint, test that endpoint with a safe read-only request when one is supported. A <code>HEAD</code> request might behave differently from a normal browser <code>GET</code>, so compare results cautiously.</p>
+</section><section id="step-2-identify-the-component-that-returned-the-error"><h2>Step 2: Identify the component that returned the error</h2><p>Draw the actual path of the request, for example:</p>
+<pre><code class="language-text">Browser → CDN/WAF → Load balancer → NGINX → Application → Database
+</code></pre>
+<p>Determine which layer returned the <strong>502</strong> or <strong>504</strong>. A CDN-branded error can reflect a response received from your origin or a problem in the connection to the origin, depending on the service and message. For sites using Cloudflare, follow its specific <a href="https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-502-504/">502/504 error guidance</a> instead of treating every gateway message as the same outage.</p>
+<p>If you can, compare the public URL with an <strong>approved internal health endpoint</strong>. Do not bypass access controls or publish an internal origin address to diagnose a public website.</p>
+</section><section id="step-3-check-whether-the-upstream-application-is-running"><h2>Step 3: Check whether the upstream application is running</h2><p>If you control the application host, inspect the service manager or container platform. For an NGINX reverse proxy serving a local HTTP application, an authorized administrator might test a private health endpoint on the host:</p>
+<pre><code class="language-bash">curl -I --max-time 5 http://127.0.0.1:3000/health
+</code></pre>
+<p>Replace the example port and path with your application's known configuration. If <code>/health</code> does not exist, use the supported status endpoint rather than assuming a 404 means the app is down.</p>
+<p>Check whether the process is running, restarted recently, or exceeded resource limits. In a containerized deployment, inspect pod/container status and readiness/liveness checks. A running process is not necessarily a healthy application: database connection failures or exhausted worker pools can prevent it from returning a timely response.</p>
+</section><section id="step-4-compare-reverse-proxy-and-application-logs"><h2>Step 4: Compare reverse-proxy and application logs</h2><p>On a server you administer, inspect relevant log files or your centralized logging service. A common NGINX example is:</p>
+<pre><code class="language-bash">sudo tail -n 100 /var/log/nginx/error.log
+</code></pre>
+<p>The log location may differ on managed hosting or inside containers. Match log entries to the <strong>same timestamp and request path</strong>. Useful patterns include:</p>
+<ul>
+<li><strong>Connection refused:</strong> The proxy tried an address/port where nothing accepted the connection.</li>
+<li><strong>Host not found:</strong> The proxy could not resolve the configured upstream hostname.</li>
+<li><strong>Upstream timed out:</strong> The service did not answer within the allowed time; check slowness and backend dependencies.</li>
+<li><strong>TLS handshake or certificate validation error:</strong> Check hostname, certificate validity, trust chain, and protocol support between proxy and origin.</li>
+<li><strong>Application returns HTTP 500:</strong> Check application logs and the underlying exception before changing proxy settings.</li>
+</ul>
+<p>Do not paste entire production logs into public forums: they may contain sensitive paths, IDs, or user data.</p>
+</section><section id="step-5-verify-upstream-addresses-ports-and-tls-settings"><h2>Step 5: Verify upstream addresses, ports, and TLS settings</h2><p>Review the active proxy configuration and the current deployment's service discovery. Confirm the upstream URL points to the <strong>correct host, protocol, and port</strong>. For instance, an application changed from HTTP port 3000 to HTTPS port 8443 requires a matching configuration—not just a higher timeout value.</p>
+<p>For NGINX, an administrator can validate syntax before applying changes:</p>
+<pre><code class="language-bash">sudo nginx -t
+</code></pre>
+<p>Syntax validation does not confirm that upstream services are reachable. If it fails, do not reload the server. If it passes, test changes in staging and deploy through your normal change process. NGINX documents <code>proxy_pass</code>, upstream error handling, and timeouts in its <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html">proxy module reference</a>.</p>
+<p>Do <strong>not</strong> disable certificate verification or reduce TLS security merely to make a gateway error disappear. Fix the certificate name/trust issue or reverse-proxy settings instead.</p>
+</section><section id="step-6-look-for-slow-queries-overload-or-deployment-regressions"><h2>Step 6: Look for slow queries, overload, or deployment regressions</h2><p>A request that works in staging but times out in production may depend on larger datasets, restricted database connectivity, higher traffic, or a different environment variable. Compare the failing request's response time with app/database logs and relevant system metrics such as CPU, memory, connection pool utilization, and restart counts.</p>
+<p>Ask these questions in order:</p>
+<ol>
+<li>Did the error begin immediately after a release, DNS change, certificate rotation, or infrastructure update?</li>
+<li>Is the failure limited to one route or application instance?</li>
+<li>Does direct application health succeed while the public gateway fails?</li>
+<li>Are there repeated long-running database operations or dependency timeouts?</li>
+<li>Is the service retrying so often that it makes an overloaded backend worse?</li>
+</ol>
+<p>Rolling back a recent application change may be appropriate if you have a tested rollback procedure. Avoid restarting every component at once; it destroys useful evidence and can interrupt healthy requests.</p>
+</section><section id="step-7-verify-recovery-end-to-end"><h2>Step 7: Verify recovery end to end</h2><p>After the targeted fix, retest the originally failing path through the normal public URL and monitor it for more than one request. Look for successful responses, reasonable latency, lower error rates, and no repeating upstream warnings. If a CDN is involved, test multiple client networks or regions when your monitoring permits.</p>
+<p>Document the root cause and prevention step—for example, a corrected port, an application readiness check, a repaired TLS chain, or an alert for exhausted worker connections. A longer proxy timeout alone is not a complete fix if the application remains slow.</p>
+</section><section id="frequently-asked-questions"><h2>Frequently asked questions</h2><h3>Are 502 and 504 errors caused by the visitor's internet connection?</h3>
+<p>Usually these codes indicate a failure in the gateway-to-upstream part of the request path. A visitor can retry, but the site operator generally needs to inspect server-side evidence.</p>
+<h3>Should I raise the proxy timeout to fix a 504?</h3>
+<p>Only after measuring normal application response times and identifying the slow dependency. Increasing it blindly can keep requests open longer without fixing the bottleneck.</p>
+<h3>Does restarting NGINX fix a 502?</h3>
+<p>It may appear to help temporarily, but it can also hide the cause. Check upstream health and logs first; follow an approved deployment procedure if a restart is warranted.</p>
+</section><section id="official-references"><h2>Official references</h2><ul>
+<li><a href="https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-502-504/">Cloudflare — Error 502 or 504</a></li>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html">NGINX — HTTP proxy module</a></li>
+<li><a href="https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/">Cloudflare — 5xx troubleshooting overview</a></li>
+</ul>
+</section><div class="article-end"><h2>Make each deployment easier to diagnose.</h2><p>A reliable staging and release process helps separate application regressions from infrastructure incidents.</p><div class="actions"><a class="button" href="test-staging-production-release-planning.html">Review staging and releases</a><a class="button secondary" href="../contact.html">Suggest another guide</a></div></div></article>
+</div>
+<section class="section"><div class="section-heading"><h2>A little more to explore</h2></div>
+<div class="two-grid"><article class="story-card" data-category="IT Infrastructure" data-search="SQL Server connection failures: isolate DNS, TCP, TLS and login IT Infrastructure Diagnose the first failing layer from the application host, distinguish reachability from authentication and collect evidence that the next team can use. sql server connection dns tcp tls firewall 1433 named instance sql browser login certificate database troubleshooting powershell"><a aria-hidden="true" class="story-art lilac" href="sql-server-connection-troubleshooting-layers.html" tabindex="-1"><span class="art-label">IT Infrastructure</span><span class="art-title">Find the failing layer.<br/>Change the right thing.</span><span class="art-number">FIELD NOTES / 31</span></a><div class="story-copy"><span class="meta">IT Infrastructure · 4 min read</span><h3><a href="sql-server-connection-troubleshooting-layers.html">SQL Server connection failures: isolate DNS, TCP, TLS and login</a></h3><p>Diagnose the first failing layer from the application host, distinguish reachability from authentication and collect evidence that the next team can use.</p><a class="text-link" href="sql-server-connection-troubleshooting-layers.html">Read the guide<span class="sr-only">: SQL Server connection failures: isolate DNS, TCP, TLS and login</span></a></div></article><article class="story-card" data-category="IT Infrastructure" data-search="Test, staging and production: design a release you can recover IT Infrastructure Define what each environment proves, separate its dependencies and rehearse a cutover with clear health checks and recovery decisions. test staging production environments server migration cutover deployment rollback dns recovery rto rpo runbook"><a aria-hidden="true" class="story-art peach" href="test-staging-production-release-planning.html" tabindex="-1"><span class="art-label">IT Infrastructure</span><span class="art-title">Prove the change.<br/>Plan the recovery.</span><span class="art-number">FIELD NOTES / 27</span></a><div class="story-copy"><span class="meta">IT Infrastructure · 4 min read</span><h3><a href="test-staging-production-release-planning.html">Test, staging and production: design a release you can recover</a></h3><p>Define what each environment proves, separate its dependencies and rehearse a cutover with clear health checks and recovery decisions.</p><a class="text-link" href="test-staging-production-release-planning.html">Read the guide<span class="sr-only">: Test, staging and production: design a release you can recover</span></a></div></article></div></section><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Website Showing 502 or 504? How to Troubleshoot Gateway Errors","description":"Find 502 Bad Gateway and 504 Gateway Timeout causes across CDNs, reverse proxies, app servers, DNS, TLS and upstream health checks.","articleSection":"How-To","datePublished":"2026-11-22T15:20:00-05:00","dateModified":"2026-11-22T15:20:00-05:00","author":{"@type":"Organization","name":"Wolfpack Labs","logo":{"@type":"ImageObject","url":"https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3","width":512,"height":512}},"publisher":{"@type":"Organization","name":"Wolfpack Labs","logo":{"@type":"ImageObject","url":"https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3","width":512,"height":512}},"mainEntityOfPage":"https://wolfpack-labs.com/blog/502-504-bad-gateway-website-troubleshooting.html","wordCount":1218}</script></main><footer class="friendly-footer"><div>
+<a aria-label="Wolfpack Labs home" class="friendly-brand" data-no-image-viewer="" href="../index.html" onclick="event.stopPropagation()"><img alt="Wolfpack Labs" class="site-custom-logo" decoding="async" height="64" src="../images/wolfpack-labs-custom-logo.png?v=original-logo-11" style="display:block;width:clamp(162px, 22vw, 192px);max-width:100%;height:auto;aspect-ratio:3/1;object-fit:contain;cursor:pointer" width="192"/></a><p>Useful information. A little more confidence.</p>
+</div>
+<nav aria-label="Website footer navigation"><a href="../contact.html">Contact</a><a href="../legal/privacy-policy.html">Website privacy</a><a href="../legal/terms.html">Website terms</a><a href="../legal/disclosures.html">Disclosures</a><a href="../legal/index.html">App policies &amp; legal</a><a href="../womens-health/consumer-health-data.html">Women’s Health Data Privacy</a></nav><p class="copyright">© 2026 Wolfpack Labs LLC</p></footer>
+</div></body>
+</html>
+
