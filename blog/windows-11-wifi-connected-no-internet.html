@@ -1,0 +1,138 @@
+---
+blog_post: true
+title: "Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause"
+date: "2026-11-22T14:00:00-05:00"
+last_modified_at: "2026-11-22T14:00:00-05:00"
+category: "How-To"
+read_time: "5 min read"
+summary: "Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider."
+art_color: "teal"
+art_title: "Connected to Wi-Fi.<br>Still offline."
+field_note: "47"
+search_keywords: "windows 11 wifi connected no internet ipconfig dhcp dns default gateway nslookup ip address no internet"
+---
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html data-site-theme="wolfpack" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause | Wolfpack Labs</title>
+<meta content="Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider." name="description"/>
+<meta content="#fbf7ef" name="theme-color"/>
+<link href="https://wolfpack-labs.com/blog/windows-11-wifi-connected-no-internet.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause" property="og:title"/>
+<meta content="Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider." property="og:description"/>
+<meta content="https://wolfpack-labs.com/blog/windows-11-wifi-connected-no-internet.html" property="og:url"/>
+<script defer="" src="../scripts/mobile-nav.js?v=20261102-responsive10"></script><script defer="" src="../scripts/friendly.js?v=20261102-responsive10"></script><link href="../styles/warm.css?v=20261007-original" rel="stylesheet"/>
+<meta content="2026-11-22T14:00:00-05:00" property="article:published_time"/>
+<meta content="2026-11-22T14:00:00-05:00" property="article:modified_time"/>
+<link href="../favicon.ico?v=20261020-brand3" rel="icon" sizes="any"/>
+<link href="../images/icons/favicon-32.png?v=20261020-brand3" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../images/icons/favicon-192.png?v=20261020-brand3" rel="icon" sizes="192x192" type="image/png"/>
+<link href="../images/icons/apple-touch-icon.png?v=20261020-brand3" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../site.webmanifest?v=20261020-brand3" rel="manifest"/>
+<meta content="https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3" property="og:image"/>
+<meta content="Wolfpack Labs wolf-head logo" property="og:image:alt"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3" name="twitter:image"/>
+<meta content="Wolfpack Labs wolf-head logo" name="twitter:image:alt"/>
+<meta content="summary" name="twitter:card"/>
+<link href="../styles/site-branding.css?v=20261102-logo-size7" rel="stylesheet"/>
+<link href="../styles/site-system.css?v=20261102-responsive10" rel="stylesheet"/>
+<meta content="Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause" name="twitter:title"/>
+<meta content="Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider." name="twitter:description"/>
+<meta content="How-To" property="article:section"/>
+<meta content="Wolfpack Labs" property="og:site_name"/>
+<link href="../styles/pages/blog-articles.css?v=20261030-guides" rel="stylesheet"/>
+<link href="../styles/image-viewer.css?v=20261102-viewer2" rel="stylesheet"/><script defer="" src="../scripts/image-viewer.js?v=20261102-logo-size7"></script></head>
+<body class="friendly has-site-shell"><div class="shell site-shell">
+<a class="skip-link" href="#main-content">Skip to content</a><header class="topbar"><a aria-label="Wolfpack Labs home" class="friendly-brand" data-no-image-viewer="" href="../index.html" onclick="event.stopPropagation()"><img alt="Wolfpack Labs" class="site-custom-logo" decoding="async" height="76" src="../images/wolfpack-labs-custom-logo.png?v=original-logo-11" style="display:block;width:clamp(162px, 22vw, 228px);max-width:100%;height:auto;aspect-ratio:3/1;object-fit:contain;cursor:pointer" width="228"/></a><div class="nav-accordion">
+<button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open primary navigation" class="nav-toggle" hidden="" type="button"><span>Menu</span><span aria-hidden="true" data-menu-icon="">☰</span></button><nav aria-label="Primary navigation" class="nav" id="primary-navigation"><a href="../apps.html">Apps</a><a href="../tools.html">Tools</a><a href="../resources.html">Resources</a><a aria-current="page" href="../blog.html">Blog</a></nav>
+</div></header><main class="site-content" id="main-content"><nav aria-label="Breadcrumb" class="breadcrumbs"><a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / <a href="../blog.html?category=How-To">How-To</a></nav>
+<header class="article-header"><span class="eyebrow">How-To</span><h1>Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause</h1>
+<p>Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider.</p>
+<div class="meta">By Wolfpack Labs · <time datetime="2026-11-22">November 22, 2026</time> · 5 min read</div></header>
+<div class="article-layout">
+<aside aria-label="In this guide" class="article-toc"><strong>In this guide</strong><a href="#quick-answer">Start here: identify the cause</a><a href="#before-you-change-anything-isolate-the-problem">Before you change anything: isolate the problem</a><a href="#step-1-restart-the-connection-without-resetting-the-computer">Step 1: Restart the connection without resetting the computer</a><a href="#step-2-inspect-your-ip-address-and-gateway">Step 2: Inspect your IP address and gateway</a><a href="#step-3-test-the-router-and-dns-separately">Step 3: Test the router and DNS separately</a><a href="#step-4-clear-cached-dns-answers">Step 4: Clear cached DNS answers</a><a href="#step-5-check-browser-vpn-and-proxy-configuration">Step 5: Check browser, VPN, and proxy configuration</a><a href="#step-6-update-the-wireless-adapter-or-use-windows-troubleshooting">Step 6: Update the wireless adapter or use Windows troubleshooting</a><a href="#step-7-network-reset-is-the-last-resort">Step 7: Network reset is the last resort</a><a href="#how-to-confirm-the-problem-is-fixed">How to confirm the problem is fixed</a><a href="#frequently-asked-questions">Frequently asked questions</a></aside><article class="article-body"><section id="quick-answer"><h2>Start here: identify the cause</h2><p>A Wi-Fi symbol only proves that your computer has connected to a wireless network. It does <strong>not</strong> prove that your router can reach the internet or that Windows can translate website names into IP addresses. The best fix depends on which part of the connection failed.</p>
+<p>This Windows 11 deep dive goes beyond our general <a href="wifi-connected-but-no-internet.html">Wi-Fi connection guide</a> with DHCP, gateway and DNS tests.</p><div class="callout"><strong>Quick diagnosis</strong><p>Compare another device on the same Wi-Fi before resetting network settings. Corporate VPNs and managed network configurations may require IT approval.</p></div></section><section id="before-you-change-anything-isolate-the-problem"><h2>Before you change anything: isolate the problem</h2><ol>
+<li>On the affected PC, try two unrelated websites, such as a news site and a search engine. If only one site fails, investigate that website or browser first.</li>
+<li>Open a website on your phone <strong>while connected to the same Wi-Fi</strong>. Then switch your phone to cellular data and try again.</li>
+<li>If every device fails on Wi-Fi, check your router's internet status and your provider's outage information. If only one Windows computer fails, continue below.</li>
+<li>If you use a company VPN, managed laptop, or custom DNS configuration, contact IT before resetting network settings. These fixes can disconnect remote access.</li>
+</ol>
+<blockquote>
+<p><strong>Quick interpretation:</strong> Phone works on Wi-Fi but laptop fails = likely a PC-level issue. Both fail on Wi-Fi but cellular works = likely router or internet service. One website fails everywhere = likely site-specific.</p>
+</blockquote>
+</section><section id="step-1-restart-the-connection-without-resetting-the-computer"><h2>Step 1: Restart the connection without resetting the computer</h2><ol>
+<li>Go to <strong>Settings → Network &amp; internet → Wi-Fi</strong>.</li>
+<li>Turn Wi-Fi off, wait a few seconds, and turn it on again.</li>
+<li>Reconnect to your normal network. If the network requires a captive portal (hotel, café, campus), open a browser and complete its sign-in page.</li>
+<li>Restart your router <strong>only if you control it</strong> and other devices are affected; avoid rebooting shared workplace equipment.</li>
+</ol>
+<p>Test the same websites again. If they still fail, determine whether Windows received a usable network address.</p>
+</section><section id="step-2-inspect-your-ip-address-and-gateway"><h2>Step 2: Inspect your IP address and gateway</h2><p>Open <strong>Windows Terminal</strong> or <strong>Command Prompt</strong> and run:</p>
+<pre><code class="language-bat">ipconfig /all
+</code></pre>
+<p>Find the active Wi-Fi adapter. Look for <strong>IPv4 Address</strong>, <strong>Default Gateway</strong>, <strong>DHCP Enabled</strong>, and <strong>DNS Servers</strong>.</p>
+<ul>
+<li>An address starting with <strong>169.254.</strong> often means Windows did not receive an IPv4 address from DHCP.</li>
+<li>A missing default gateway often indicates that the PC cannot reach the router normally.</li>
+<li>A valid address and gateway with broken website names may point toward DNS, but additional tests are needed.</li>
+</ul>
+<p>If your home network uses DHCP and the address looks wrong, open <strong>Command Prompt as administrator</strong> and run:</p>
+<pre><code class="language-bat">ipconfig /release
+ipconfig /renew
+</code></pre>
+<p>These commands briefly drop the adapter's IPv4 lease. <strong>Do not run them during a remote support session or on a managed computer without approval.</strong> If renewal fails, check the router's DHCP settings or try another Wi-Fi network.</p>
+</section><section id="step-3-test-the-router-and-dns-separately"><h2>Step 3: Test the router and DNS separately</h2><p>From Command Prompt, run:</p>
+<pre><code class="language-bat">ping 192.168.1.1
+nslookup example.com
+</code></pre>
+<p>Replace <code>192.168.1.1</code> with the <strong>Default Gateway</strong> listed in your own <code>ipconfig</code> output. A successful gateway response suggests that the PC can reach the router. Some routers block ping, so failure isn't conclusive.</p>
+<p><code>nslookup</code> tests name resolution. If it returns timeouts or a server error while other connectivity works, your configured DNS server may be unavailable. Corporate and VPN DNS must be handled by your IT administrator.</p>
+</section><section id="step-4-clear-cached-dns-answers"><h2>Step 4: Clear cached DNS answers</h2><p>Open Command Prompt as administrator and run:</p>
+<pre><code class="language-bat">ipconfig /flushdns
+</code></pre>
+<p>This clears cached name-resolution results; it does not reset your router or erase personal files. Close and reopen your browser, then retry the affected sites. If DNS still fails, check the network's configured DNS servers rather than repeatedly clearing the cache.</p>
+</section><section id="step-5-check-browser-vpn-and-proxy-configuration"><h2>Step 5: Check browser, VPN, and proxy configuration</h2><ol>
+<li>Try the same page in a private window or a different browser.</li>
+<li>Under <strong>Settings → Network &amp; internet → Proxy</strong>, look for a manual proxy. Do not disable a required workplace proxy; instead confirm it matches your organization's instructions.</li>
+<li>If you are using a personal VPN, temporarily disconnect it and retest. Reconnect after diagnosis.</li>
+<li>Check the computer's date and time. Incorrect settings can make secure websites appear broken even when internet access exists.</li>
+</ol>
+<p>If the connection works in another browser, concentrate on extensions and browser settings before changing Windows networking.</p>
+</section><section id="step-6-update-the-wireless-adapter-or-use-windows-troubleshooting"><h2>Step 6: Update the wireless adapter or use Windows troubleshooting</h2><ol>
+<li>Search for <strong>Get Help</strong> and run the network/internet troubleshooter, or go to <strong>Settings → System → Troubleshoot</strong>.</li>
+<li>Open <strong>Device Manager → Network adapters</strong>, right-click your Wi-Fi adapter, and choose <strong>Update driver</strong>.</li>
+<li>If the problem began immediately after a driver change, check the adapter's <strong>Properties → Driver → Roll Back Driver</strong> option when available.</li>
+<li>Get drivers only from Windows Update or the PC/network-adapter manufacturer's official website.</li>
+</ol>
+</section><section id="step-7-network-reset-is-the-last-resort"><h2>Step 7: Network reset is the last resort</h2><p>If the PC alone still cannot connect and none of the checks identified a fix, go to <strong>Settings → Network &amp; internet → Advanced network settings → Network reset</strong>. Windows will remove and reinstall network adapters and reset related settings after a restart. <strong>You may need to reinstall VPN software or reconfigure virtual adapters afterward.</strong></p>
+</section><section id="how-to-confirm-the-problem-is-fixed"><h2>How to confirm the problem is fixed</h2><p>Open two HTTPS websites, confirm that name lookups work, and reconnect any VPN that you normally use. Test again after the next restart. If your devices continue losing connectivity together, focus on the router or ISP rather than repeatedly resetting Windows.</p>
+</section><section id="frequently-asked-questions"><h2>Frequently asked questions</h2><h3>Why does Wi-Fi say “Connected” if I have no internet?</h3>
+<p>Because Wi-Fi connection status describes the link to your local wireless network. DNS, router routing, ISP service, and browser connectivity are separate stages.</p>
+<h3>Will flushing DNS delete my files?</h3>
+<p>No. <code>ipconfig /flushdns</code> clears a Windows DNS cache; it does not touch documents or photos.</p>
+<h3>Should I immediately change my DNS to a public provider?</h3>
+<p>Not necessarily. Diagnose first. A public DNS service can break organization-only domains, parental controls, or VPN-based name resolution.</p>
+</section><section id="official-references"><h2>Official references</h2><ul>
+<li><a href="https://support.microsoft.com/en-us/windows/experience/connectivity-networking/fix-wi-fi-connection-issues-in-windows">Microsoft Support — Fix Wi-Fi connection issues in Windows</a></li>
+</ul>
+</section><div class="article-end"><h2>Start with the right connection test.</h2><p>See our quick Wi-Fi guide if you need to separate router, device and internet service problems.</p><div class="actions"><a class="button" href="wifi-connected-but-no-internet.html">See the basic Wi-Fi guide</a><a class="button secondary" href="../contact.html">Suggest another guide</a></div></div></article>
+</div>
+<section class="section"><div class="section-heading"><h2>A little more to explore</h2></div>
+<div class="two-grid"><article class="story-card" data-category="How-To" data-search="Wi-Fi connected but no internet? What to check first How-To Find out why Wi-Fi connects but websites will not load. Compare devices, check network sign-in, and troubleshoot Windows, Mac, or your home router. wifi wi-fi connected no internet secured windows 11 mac router modem outage captive portal guest network hotspot">
+<a aria-hidden="true" class="story-art teal" href="wifi-connected-but-no-internet.html" tabindex="-1"><span class="art-label">How-To</span><span class="art-title">Connected.<br/>Still not online?</span><span class="art-number">FIELD NOTES / 42</span></a>
+<div class="story-copy"><span class="meta">How-To · 4 min read</span><h3><a href="wifi-connected-but-no-internet.html">Wi-Fi connected but no internet? What to check first</a></h3><p>Find out why Wi-Fi connects but websites will not load. Compare devices, check network sign-in, and troubleshoot Windows, Mac, or your home router.</p><a class="text-link" href="wifi-connected-but-no-internet.html">Read the guide<span class="sr-only">: Wi-Fi connected but no internet? What to check first</span></a></div></article><article class="story-card" data-category="General Tech" data-search="Why is my Wi-Fi so slow? What to check first General Tech Find out whether the problem is your device, your Wi-Fi coverage, or your internet connection with a few simple checks. Why is my Wi-Fi so slow? What to check first General Tech Find out whether the problem is your device, your Wi-Fi coverage, or your internet connection with a few simple checks. wifi wi-fi internet slow router modem buffering connection speed troubleshooting">
+<a aria-hidden="true" class="story-art teal" href="why-is-my-wifi-so-slow.html" tabindex="-1"><span class="art-label">General Tech</span><span class="art-title">A little less<br/>buffering.</span><span class="art-number">FIELD NOTES / 10</span></a>
+<div class="story-copy"><span class="meta">General Tech · 3 min read</span><h3><a href="why-is-my-wifi-so-slow.html">Why is my Wi-Fi so slow? What to check first</a></h3><p>Find out whether the problem is your device, your Wi-Fi coverage, or your internet connection with a few simple checks.</p><a class="text-link" href="why-is-my-wifi-so-slow.html">Read the guide<span class="sr-only">: Why is my Wi-Fi so slow? What to check first</span></a></div></article></div></section><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Windows 11 Connected to Wi-Fi but No Internet? How to Find and Fix the Cause","description":"Your laptop shows a Wi-Fi connection, but websites will not load. Use these checks to tell whether the problem is your PC, router, DNS, or internet provider.","articleSection":"How-To","datePublished":"2026-11-22T14:00:00-05:00","dateModified":"2026-11-22T14:00:00-05:00","author":{"@type":"Organization","name":"Wolfpack Labs","logo":{"@type":"ImageObject","url":"https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3","width":512,"height":512}},"publisher":{"@type":"Organization","name":"Wolfpack Labs","logo":{"@type":"ImageObject","url":"https://wolfpack-labs.com/images/wolfpack-labs-mark-512.png?v=20261020-brand3","width":512,"height":512}},"mainEntityOfPage":"https://wolfpack-labs.com/blog/windows-11-wifi-connected-no-internet.html","wordCount":962}</script></main><footer class="friendly-footer"><div>
+<a aria-label="Wolfpack Labs home" class="friendly-brand" data-no-image-viewer="" href="../index.html" onclick="event.stopPropagation()"><img alt="Wolfpack Labs" class="site-custom-logo" decoding="async" height="64" src="../images/wolfpack-labs-custom-logo.png?v=original-logo-11" style="display:block;width:clamp(162px, 22vw, 192px);max-width:100%;height:auto;aspect-ratio:3/1;object-fit:contain;cursor:pointer" width="192"/></a><p>Useful information. A little more confidence.</p>
+</div>
+<nav aria-label="Website footer navigation"><a href="../contact.html">Contact</a><a href="../legal/privacy-policy.html">Website privacy</a><a href="../legal/terms.html">Website terms</a><a href="../legal/disclosures.html">Disclosures</a><a href="../legal/index.html">App policies &amp; legal</a><a href="../womens-health/consumer-health-data.html">Women’s Health Data Privacy</a></nav><p class="copyright">© 2026 Wolfpack Labs LLC</p></footer>
+</div></body>
+</html>
+
